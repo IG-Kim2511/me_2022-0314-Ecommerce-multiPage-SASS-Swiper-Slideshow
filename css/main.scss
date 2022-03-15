@@ -80,6 +80,69 @@ section{
 
 .header{
     position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 9%;
+
+    .logo{
+        font-size: 2.5rem;
+        color: $white;
+        font-weight: bolder;
+        i{
+            color: $gold;
+        }
+    }
+
+    .search-form{
+        height: 5rem;
+        width: 50rem;
+        
+
+        border-radius: 5rem;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        background: $white;
+
+        input{
+            width: 100%;
+            padding-right:1rem ;
+            font-size: 1.7rem;
+
+            // 🦄text-transform: none;
+            text-transform: none;
+            
+            color: $light-color;
+        }
+
+        label{
+            font-size: 2rem;
+            color: $light-color;
+            cursor: pointer;
+
+            
+            &:hover{
+                color: $blue;
+            }
+        }
+    }
+
+    .icons a,
+    .icons div{
+        font-size: 2.5rem;
+        margin-left: 2rem;
+        color: $white;
+        cursor: pointer;
+
+        &:hover{
+            color: $gold;
+        }
+
+    }
 }
 
 // 🥒js0432 - swiper 
