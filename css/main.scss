@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Mochiy+Pop+One&display=swap');
 
+// 🥚sass functions
+
 $blue : #0984e3;
 $black : #333;
 $white : #fff;
@@ -22,6 +24,8 @@ $box-shadow : 0 .5rem 1rem rgba(0,0,0,.2);
     }
 }
 
+
+// 🥚universal
 *{
     font-family: 'Mochiy Pop One', sans-serif;
     margin:0; padding:0;
@@ -76,7 +80,7 @@ section{
 }
  
 
-// index.html
+// 🥚index.html
 
 .header{
     position: sticky;
@@ -131,6 +135,10 @@ section{
         }
     }
 
+    .icons{
+        display: flex;
+    }
+
     .icons a,
     .icons div{
         font-size: 2.5rem;
@@ -144,6 +152,36 @@ section{
 
     }
 }
+
+// 🥒responsive
+#search-btn{   
+    display: none;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 🥒js0432 - swiper 
 .swiper-button-next::after,

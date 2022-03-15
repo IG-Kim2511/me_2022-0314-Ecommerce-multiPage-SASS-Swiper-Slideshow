@@ -131,6 +131,12 @@ section {
   color: #0984e3;
 }
 
+.header .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header .icons a,
 .header .icons div {
   font-size: 2.5rem;
@@ -142,6 +148,10 @@ section {
 .header .icons a:hover,
 .header .icons div:hover {
   color: gold;
+}
+
+#search-btn {
+  display: none;
 }
 
 .swiper-button-next::after,
