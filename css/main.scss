@@ -2,6 +2,13 @@
 
 body{
 font-family: 'Mochiy Pop One', sans-serif;
-;
 
+}
+
+
+// 🥒js0432 - swiper 
+.swiper-button-next::after,
+.swiper-button-prev::after{
+  font-size: 3rem;
+  color:$black;
 }
