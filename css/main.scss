@@ -10,323 +10,330 @@ $light-color : #666;
 $light-bg : #eee;
 
 $border : .2rem solid $black;
-$box-shadow : 0 .5rem 1rem rgba(0,0,0,.2);
+$box-shadow : 0 .5rem 1rem rgba(0, 0, 0, .2);
 
 // 🍀css320
 @mixin grid($val) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
-    gap:2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 2rem;
 }
 
 // 🍀css2022
 @keyframes fadeIn {
-    0%{
-      transform: scale(1.5);
-      opacity: 0;
-    }
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }
 
 
 // 🥚universal
-*{
-    font-family: 'Mochiy Pop One', sans-serif;
-    margin:0; padding:0;
-    box-sizing: border-box;
-    text-decoration: none;  
-    outline: none; border:none;
-    text-transform: capitalize;
-    transition: all .2s linear;
-    
-
-    
+* {
+  font-family: 'Mochiy Pop One', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
 }
 
-html{
-    overflow-x: hidden;
-    font-size: 62.5%;
-  
-    &::-webkit-scrollbar{
-      width: 1rem;
-    }
-  
-    &::-webkit-scrollbar-track{
-      background: $light-bg;
-    }
-  
-    &::-webkit-scrollbar-thumb{
-      background: $blue;
-      border-radius: 5rem;
-    }
-}
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
 
-body{
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+
+  // 🦄scrollbar background color
+  &::-webkit-scrollbar-track {
     background: $light-bg;
-    
-}
+  }
 
-section{
-    padding:3rem 9%;
-}
-
-
-.heading{
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 3.5rem;
-    color:$black;
-  
-    span{
-      color:$blue;
-    }
-}
-
-.coding{
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    background:$gold;
-    
-}
-
-
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    border-radius: .5rem;
-    padding:1rem 3rem;
-    font-size: 1.7rem;
-    color:$white;
-    cursor: pointer;
+  // 🦄scrollbar color
+  &::-webkit-scrollbar-thumb {
     background: $blue;
-  
-    &:hover{
-      background: $black;
-    }
+    border-radius: 5rem;
+  }
 }
- 
+
+body {
+  background: $light-bg;
+
+}
+
+section {
+  padding: 3rem 9%;
+}
+
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  color: $black;
+
+  span {
+    color: $blue;
+  }
+}
+
+.coding {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  background: $gold;
+
+}
+
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  border-radius: .5rem;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: $white;
+  cursor: pointer;
+  background: $blue;
+
+  &:hover {
+    background: $black;
+  }
+}
+
 
 // 🥚index.html
 
 // 🥚header
 
-.header{
-    position: sticky;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    background: $blue;
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 9%;
+
+  .logo {
+    font-size: 2.5rem;
+    color: $white;
+    font-weight: bolder;
+
+    i {
+      color: $gold;
+    }
+  }
+
+  .search-form {
+    height: 5rem;
+    width: 50rem;
+
+
+    border-radius: 5rem;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem 9%;
+    background: $white;
 
-    .logo{
-        font-size: 2.5rem;
-        color: $white;
-        font-weight: bolder;
-        i{
-            color: $gold;
-        }
+    input {
+      width: 100%;
+      padding-right: 1rem;
+      font-size: 1.7rem;
+
+      // 🦄text-transform: none;
+      text-transform: none;
+
+      color: $light-color;
     }
 
-    .search-form{
-        height: 5rem;
-        width: 50rem;
-        
+    label {
+      font-size: 2rem;
+      color: $light-color;
+      cursor: pointer;
 
-        border-radius: 5rem;
-        padding: 0 2rem;
-        display: flex;
-        align-items: center;
-        background: $white;
 
-        input{
-            width: 100%;
-            padding-right:1rem ;
-            font-size: 1.7rem;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
 
-            // 🦄text-transform: none;
-            text-transform: none;
-            
-            color: $light-color;
-        }
+  .icons {
+    display: flex;
+  }
 
-        label{
-            font-size: 2rem;
-            color: $light-color;
-            cursor: pointer;
+  .icons a,
+  .icons div {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    color: $white;
+    cursor: pointer;
 
-            
-            &:hover{
-                color: $blue;
-            }
-        }
+    &:hover {
+      color: $gold;
     }
 
-    .icons{
-        display: flex;
-    }
-
-    .icons a,
-    .icons div{
-        font-size: 2.5rem;
-        margin-left: 2rem;
-        color: $white;
-        cursor: pointer;
-
-        &:hover{
-            color: $gold;
-        }
-
-    }
+  }
 }
 
 // 🥒responsive
-.search-btn{   
-    display: none;
+.search-btn {
+  display: none;
 }
-  
-.side-bar{
 
-    // 🥒responsive
-    position: fixed;
-    top: 0; right: -110%;
+.side-bar {
 
-    height: 100%;
-    width: 30rem;
-    background: $white;
-    z-index: 10000;
+  // 🥒responsive
+  position: fixed;
+  top: 0;
+  right: -110%;
+
+  height: 100%;
+  width: 30rem;
+  background: $white;
+  z-index: 10000;
 
 
-    // 🥒js1212, .active (:active 틀림)
-    &.active{
-        right: 0;
-        // 🦄rgba(0,0,0,0.7); - 불투명
-        box-shadow: 0 0 0 100vw rgba(0,0,0,0.7); 
+  // 🥒js1212, .active (:active 틀림)
+  &.active {
+    right: 0;
+    // 🦄rgba(0,0,0,0.7); - 불투명
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+  }
+
+  .close-side-bar {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+
+    font-size: 4rem;
+    cursor: pointer;
+
+    color: $light-color;
+
+    &:hover {
+
+      // 🦄fontawesom icon을 rotate
+      transform: rotate(90deg);
+      color: $black;
+    }
+  }
+
+  .user {
+    padding: 2rem;
+    background: $light-bg;
+    text-align: center;
+
+    img {
+      height: 17rem;
+      width: 17rem;
+      border-radius: 50%;
+      border: 1rem solid $white;
+      box-shadow: $box-shadow;
+      margin-bottom: .5rem;
     }
 
-    .close-side-bar{
-        position: absolute;
-        top: 1rem; right: 2rem;
-
-        font-size: 4rem;
-        cursor: pointer;
-        
-        color:$light-color;
-
-        &:hover{
-
-            // 🦄fontawesom icon을 rotate
-          transform: rotate(90deg);
-          color:$black;
-        }
+    h3 {
+      padding: .5rem 0;
+      font-size: 1.7rem;
+      color: $light-color;
     }
 
-    .user{
-        padding:2rem;
-        background: $light-bg;
-        text-align: center;
-    
-        img{
-          height: 17rem;
-          width: 17rem;
-          border-radius: 50%;
-          border:1rem solid $white;
-          box-shadow: $box-shadow;
-          margin-bottom: .5rem;
-        }
-    
-        h3{
-          padding:.5rem 0;
-          font-size: 1.7rem;
-          color:$light-color;
-        }
-    
-        a{
-          font-size: 1.5rem;
-          color:$blue;
-    
-          &:hover{
-            color:$black;
-          }
+    a {
+      font-size: 1.5rem;
+      color: $blue;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  .navbar {
+    padding-top: 1rem;
+
+    a {
+      display: block;
+      padding: 1rem 2rem;
+      font-size: 1.7rem;
+      color: $light-color;
+
+      &:hover {
+        color: $blue;
+
+        i {
+          padding-right: 2rem;
         }
       }
 
-      .navbar{
-        padding-top: 1rem;
-    
-        a{
-          display: block;
-          padding:1rem 2rem;
-          font-size: 1.7rem;
-          color:$light-color;
-    
-          &:hover{
-            color:$blue;
-    
-            i{
-              padding-right: 2rem;
-            }
-          }
-    
-          i{
-            padding-right: .5rem;
-          }
-        }
-      }    
+      i {
+        padding-right: .5rem;
+      }
+    }
+  }
 }
 
 // 🥚home
 
-.home{
-    background: $white;
-    
+.home {
+  background: $white;
 
-    .slide{
-        min-height: 40rem;
 
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+  .slide {
+    min-height: 40rem;
 
-        // 🦄gap - flex에서 사용가능함
-        gap: 2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 
-        padding: 2rem 0 ;
+    // 🦄gap - flex에서 사용가능함
+    gap: 2rem;
 
-        .image{
-            flex: 1  1 42rem;
-            text-align: center;
+    padding: 2rem 0;
 
-            img{
-                height: 70rem;
-            }
-        }
+    .image {
+      flex: 1 1 42rem;
+      text-align: center;
 
-        .content{
-            flex: 1 1 42rem;
-
-            span{
-                font-size: 2rem;
-                color: $blue;
-            }
-
-            h3{
-                padding-top: 0.5rem;
-                color: $black;
-                font-size: 3rem;
-            }
-        }
+      img {
+        height: 70rem;
+      }
     }
+
+    .content {
+      flex: 1 1 42rem;
+
+      span {
+        font-size: 2rem;
+        color: $blue;
+      }
+
+      h3 {
+        padding-top: 0.5rem;
+        color: $black;
+        font-size: 3rem;
+      }
+    }
+  }
 }
 
 
 
 // 🥒js0432 - swiper 
 .swiper-button-next::after,
-.swiper-button-prev::after{
+.swiper-button-prev::after {
   font-size: 3rem;
-  color:$black;
+  color: $black;
 }
 
 
@@ -335,183 +342,184 @@ section{
 
 // 🥚footer
 
-.quick-links{
+.quick-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: $black;
+
+  .logo {
+    font-size: 2.5rem;
+    color: $white;
+    font-weight: bolder;
+  }
+
+  i {
+    color: $gold;
+  }
+
+  .links {
+    a {
+      font-size: 1.7rem;
+      margin: 0 1rem;
+      color: $white;
+
+      &:hover {
+        color: $gold;
+      }
+    }
+  }
+
+  .share {
+    a {
+      font-size: 2.5rem;
+      color: $white;
+      margin-left: 2rem;
+    }
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  .credit {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 2rem;
-    background: $black;
+    background: $white;
+    justify-content: space-between;
 
-    .logo{
-        font-size: 2.5rem;
-        color: $white;
-        font-weight: bolder;
+    p {
+      font-size: 2rem;
+      color: $light-color;
+
+      span {
+        color: $blue;
+      }
     }
 
-    i{
-        color: $gold;
+    img {
+      height: 4rem;
     }
-
-    .links{
-        a{
-            font-size: 1.7rem;
-            margin: 0 1rem;
-            color: $white;
-
-            &:hover{
-                color: $gold;
-            }
-        }
-    }
-
-    .share{
-        a{
-            font-size: 2.5rem;
-            color: $white;
-            margin-left: 2rem;
-        }
-        &:hover{
-            color: $gold;
-        }
-    }
-    
-    .credit{
-        display: flex;
-        align-items: center;
-        gap:2rem;
-        background: $white;
-        justify-content: space-between;
-    
-        p{
-            font-size: 2rem;
-            color:$light-color;
-            
-        span{
-            color:$blue;
-        }
-        }
-    
-        img{
-            height: 4rem;            
-        }
-    }    
+  }
 }
 
 // 🥚 ./about.html
 
-.faq{  
-    .accordion-container{
-      max-width: 70rem;
-      margin:0 auto;
-  
-      .accordion{
-        background: $white;
-        margin-bottom: 1.5rem;
-        box-shadow: $box-shadow;
-  
-        &:last-child{
-          margin-bottom: .5rem;
-        }
-  
-        &.active{
-  
-          .accordion-heading{
-            background: $blue;
-  
-            i{
-              transform: rotate(180deg);
-            }
-          }
-  
-          .accordioin-content{
-            display: block;
-          }
-        }
-  
-        .accordion-heading{
-          padding:2rem;
-          display: flex;
-          align-items: center;
-          gap:1rem;
-          justify-content: space-between;
-          background: $black;
-          cursor: pointer;
-          
-          h3{
-            font-size: 2rem;
-            color:$white;
-          }
-  
-          i{
-            font-size: 2rem;
-            color:$white;
-          }
-        }
-      }
-  
-      .accordioin-content{
-        padding:2rem;
-        font-size: 1.5rem;
-        line-height: 2;
-        color:$light-color;
-        display: none;
+.faq {
+  .accordion-container {
+    max-width: 70rem;
+    margin: 0 auto;
 
-        // 🥒css2022
-        animation:fadeIn .2s linear;
-      }
-    }
-}
-
-
-.review{
-    .slide{
-      width: 35rem;
-      padding:3rem;
-      text-align: center;
-      border:$border;
-      box-shadow: $box-shadow;
-      border-radius: .5rem;
+    .accordion {
       background: $white;
-  
-      img{
-        height: 10rem;
-        width: 10rem;
-        border-radius: 50%;
+      margin-bottom: 1.5rem;
+      box-shadow: $box-shadow;
+
+      &:last-child {
         margin-bottom: .5rem;
       }
-  
-      h3{
-        font-size: 2rem;
-        color:$black;
+
+      &.active {
+
+        .accordion-heading {
+          background: $blue;
+
+          i {
+            transform: rotate(180deg);
+          }
+        }
+
+        .accordioin-content {
+          display: block;
+        }
       }
-  
-      span{
-        color:$blue;
-        font-size: 1.7rem;
-      }
-  
-      p{
-        font-size: 1.5rem;
-        line-height: 2;
-        color:$light-color;
-        padding-top: 1rem;
+
+      .accordion-heading {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+        background: $black;
+        cursor: pointer;
+
+        h3 {
+          font-size: 2rem;
+          color: $white;
+        }
+
+        i {
+          font-size: 2rem;
+          color: $white;
+        }
       }
     }
+
+    .accordioin-content {
+      padding: 2rem;
+      font-size: 1.5rem;
+      line-height: 2;
+      color: $light-color;
+      display: none;
+
+      // 🥒css2022
+      animation: fadeIn .2s linear;
+    }
+  }
 }
-  
+
+
+.review {
+  .slide {
+    width: 35rem;
+    padding: 3rem;
+    text-align: center;
+    border: $border;
+    box-shadow: $box-shadow;
+    border-radius: .5rem;
+    background: $white;
+
+    img {
+      height: 10rem;
+      width: 10rem;
+      border-radius: 50%;
+      margin-bottom: .5rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      color: $black;
+    }
+
+    span {
+      color: $blue;
+      font-size: 1.7rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 2;
+      color: $light-color;
+      padding-top: 1rem;
+    }
+  }
+}
+
 
 
 
 // 🥚contact.html
 
 // info-container
-.info-container{
-  .box-container{
+.info-container {
+  .box-container {
 
     // 🥒css320
     @include grid(31rem);
 
-    .box{
+    .box {
       background: $white;
 
       border-radius: 0.5rem;
@@ -520,7 +528,7 @@ section{
       border: $border;
       box-shadow: $box-shadow;
 
-      i{
+      i {
         background: $blue;
         font-size: 2.5rem;
 
@@ -528,20 +536,20 @@ section{
         width: 7.5rem;
 
         // 🍀line-height 응용
-        line-height: 7.5rem;  
+        line-height: 7.5rem;
         border-radius: 50%;
         margin-bottom: 0.5rem;
         color: $white;
       }
 
 
-      h3{
+      h3 {
         font-size: 2rem;
         padding: 0.5rem 0;
         color: $black;
       }
 
-      p{
+      p {
         font-size: 1.5rem;
         line-height: 2;
         color: $light-color;
@@ -556,22 +564,22 @@ section{
 
 // contact - form, input, map
 
-.contact{
+.contact {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  
-  form{
+
+  form {
     flex: 1 1 42rem;
 
-    h3{
+    h3 {
       font-size: 3rem;
       text-transform: uppercase;
       color: $black;
       padding-bottom: 1rem;
     }
 
-    p{
+    p {
       font-size: 1.5rem;
       color: $light-color;
       padding: 1rem 0;
@@ -580,75 +588,75 @@ section{
       line-height: 2;
 
     }
-    
-    .inputBox{
+
+    .inputBox {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
 
-      input{
+      input {
         width: 49%;
       }
     }
 
-    .inputBox input, 
-    textarea{
-      padding:1.2rem 1.4rem;
+    .inputBox input,
+    textarea {
+      padding: 1.2rem 1.4rem;
       border-radius: .5rem;
       box-shadow: $box-shadow;
-      border:$border;
+      border: $border;
       background: $white;
       text-transform: none;
-      color:$light-color;
+      color: $light-color;
       font-size: 1.5rem;
-      margin:.7rem 0;
+      margin: .7rem 0;
     }
 
     // 🍀css404. textarea styling , resize:none
-    textarea{
+    textarea {
       height: 15rem;
       resize: none;
       width: 100%;
-    } 
+    }
   }
 
   // 🥒html410
-  .map{
+  .map {
     flex: 1 1 42rem;
     width: 100%;
   }
 }
 
 
-.newsletter{
+.newsletter {
   background: $blue;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
 
-  .contact{
+  .contact {
     flex: 1 1 42rem;
 
-    h3{
+    h3 {
       font-size: 6rem;
       color: $white;
     }
 
-    p{
+    p {
       font-size: 2.2rem;
       color: $white;
     }
   }
 
-  form{
+  form {
     flex: 1 1 42rem;
     background: $white;
     display: flex;
     padding: 0.5rem;
     border-radius: 0.5rem;
 
-    .email{
+    .email {
       width: 100%;
       padding: 0 1.4rem;
       text-transform: none;
@@ -656,7 +664,7 @@ section{
       font-size: 1.6rem;
     }
 
-    .btn{
+    .btn {
       margin-top: 0;
     }
   }
@@ -665,68 +673,68 @@ section{
 // 🥚register.html, login.html
 
 .register,
-.login{
+.login {
 
-  form{
+  form {
     max-width: 40rem;
     border-radius: .5rem;
-    padding:2rem;
+    padding: 2rem;
     background: $white;
     box-shadow: $box-shadow;
-    border:$border;
-    margin:1rem auto;
+    border: $border;
+    margin: 1rem auto;
 
-    h3{
+    h3 {
       font-size: 2.5rem;
       padding-bottom: 1rem;
-      color:$black;
+      color: $black;
       text-transform: uppercase;
     }
-    
-    .box{
+
+    .box {
       width: 100%;
-      padding:1.2rem 1.4rem;
+      padding: 1.2rem 1.4rem;
       border-radius: .5rem;
-      border:$border;
+      border: $border;
       font-size: 1.6rem;
-      color:$light-color;
+      color: $light-color;
       text-transform: none;
-      margin:.7rem 0;
+      margin: .7rem 0;
     }
 
-    .remember{
+    .remember {
       display: flex;
       align-items: center;
-      gap:.5rem; 
+      gap: .5rem;
       padding-top: 1.5rem;
       padding-bottom: 1rem;
 
-      label{
+      label {
         font-size: 1.5rem;
-        color:$light-color;
+        color: $light-color;
         cursor: pointer;
       }
     }
 
-    .btn{
+    .btn {
       width: 100%;
       text-align: center;
 
 
       // classname .btn .link 둘다 있으묘ㅕㄴcss 다르게 넣기
-      &.link{
+      &.link {
         background: $black;
 
-        &:hover{
+        &:hover {
           background: $blue;
         }
       }
     }
 
-    p{
+    p {
       padding-top: 2rem;
       font-size: 1.5rem;
-      color:$light-color;
+      color: $light-color;
       text-align: center;
       padding-bottom: 1rem;
     }
@@ -734,6 +742,61 @@ section{
 }
 
 
+// 🥚./products.html
+
+/* 
+
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 2rem;
+}
+*/
+
+
+.category{
+  .box-container{
+     // 🥒css320
+    @include grid(15rem);
+
+    .box{
+      background: $white;
+      text-align: center;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      box-shadow: $box-shadow;
+
+      &:hover{
+        background: $black;
+
+        h3{
+          color: $white;
+        }
+      }
+
+      img{
+        height: 8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      h3{
+        font-size: 1.7rem;
+        color: $black;
+      }
+    }
+  }
+}
+
+.products{
+
+  .box-container{
+
+    // 🥒css320
+    // @include grid(31rem);
+
+  }
+
+}
 
 
 
@@ -753,152 +816,155 @@ section{
 
 // 🥚media query
 
-@media (max-width:1200px){
+@media (max-width:1200px) {
 
-    html{
-      font-size: 55%;
-    }
-  
-    .header{
-      padding:2rem;
-    }
-  
-    section{
-      padding:3rem 2rem;
-    }
-  
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  section {
+    padding: 3rem 2rem;
+  }
+
 }
 
-@media (max-width:991px){
-  
-    .quick-links{
-      flex-flow: column;
-      text-align: center;
-  
-      .links{
-        padding:1rem 0;
-  
-        a{
-          display: block;
-          font-size: 2rem;
-          padding:1rem 0;
-        }
-      }
-  
-      .share{
-  
-        a{
-          margin:0 1rem;
-        }
+@media (max-width:991px) {
+
+  .quick-links {
+    flex-flow: column;
+    text-align: center;
+
+    .links {
+      padding: 1rem 0;
+
+      a {
+        display: block;
+        font-size: 2rem;
+        padding: 1rem 0;
       }
     }
-  
-    .credit{
-      flex-flow: column;
-      text-align: center;
+
+    .share {
+
+      a {
+        margin: 0 1rem;
+      }
     }
-  
+  }
+
+  .credit {
+    flex-flow: column;
+    text-align: center;
+  }
+
 }
 
-@media (max-width:768px){
-  
-    .search-btn{
-      display: inline-block;
-    }
-  
-    .header{
-  
-      .search-form{
-        position: absolute;
-        top:99%; left:0; right:0;
-        width: 100%;
-        border-radius: 0;
-        box-shadow: $box-shadow;
-        height: 6rem;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  
-        // 👉js0130.
-        &.active{
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
+@media (max-width:768px) {
+
+  .search-btn {
+    display: inline-block;
+  }
+
+  .header {
+
+    .search-form {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      border-radius: 0;
+      box-shadow: $box-shadow;
+      height: 6rem;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+      // 👉js0130.
+      &.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
       }
     }
-  
-    .swiper-button-next,
-    .swiper-button-prev{
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  .home {
+
+    .slide {
+      text-align: center;
+    }
+  }
+
+  .newsletter {
+    text-align: center;
+
+    .content {
+      h3 {
+        font-size: 4rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+}
+
+@media (max-width:450px) {
+
+  html {
+    font-size: 50%;
+  }
+
+  .header {
+    justify-content: center;
+
+    .logo {
       display: none;
     }
-  
-    .home{
-  
-      .slide{
-        text-align: center;
-      }
-    }
-  
-    .newsletter{
-      text-align: center;
-  
-      .content{
-        h3{
-          font-size: 4rem;
-        }
-        p{
-          font-size: 1.5rem;
-        }
-      }
-    }
-  
-}
 
-@media (max-width:450px){
-  
-    html{
-      font-size: 50%;
+    .icons a,
+    .icons div {
+      margin: 0 1rem;
     }
-  
-    .header{
-      justify-content: center;
-  
-      .logo{
-        display: none;
-      }
-  
-      .icons a,
-      .icons div{
-        margin:0 1rem;
-      }
-    }
-  
-    .home{
-  
-      .slide{
-        .image{
-  
-          img{
-            height: auto;
-            width: 100%;
-          }
+  }
+
+  .home {
+
+    .slide {
+      .image {
+
+        img {
+          height: auto;
+          width: 100%;
         }
       }
     }
-  
-    .arrivals .box-container .box{
-      flex-flow: column;
-      gap:2rem;
-      text-align: center;
-    }
-  
-    .contact form .inputBox input{
+  }
+
+  .arrivals .box-container .box {
+    flex-flow: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .contact form .inputBox input {
+    width: 100%;
+  }
+
+  .shopping-cart .cart-total {
+    text-align: center;
+
+    .btn {
       width: 100%;
     }
-  
-   .shopping-cart .cart-total{
-     text-align: center;
-  
-     .btn{
-       width: 100%;
-     }
-   }
-  
+  }
+
 }
