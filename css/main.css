@@ -480,7 +480,51 @@ section {
   padding-top: 1rem;
 }
 
-.info-container {
+.info-container .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+
+.info-container .box-container .box {
+  background: #fff;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 2rem;
+  border: 0.2rem solid #333;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.info-container .box-container .box i {
+  background: #0984e3;
+  font-size: 2.5rem;
+  height: 7.5rem;
+  width: 7.5rem;
+  line-height: 7.5rem;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.info-container .box-container .box h3 {
+  font-size: 2rem;
+  padding: 0.5rem 0;
+  color: #333;
+}
+
+.info-container .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #666;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: yellow;
 }
 

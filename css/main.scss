@@ -8,9 +8,11 @@ $white : #fff;
 $gold : gold;
 $light-color : #666;
 $light-bg : #eee;
+
 $border : .2rem solid $black;
 $box-shadow : 0 .5rem 1rem rgba(0,0,0,.2);
 
+// 🍀css320
 @mixin grid($val) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
@@ -501,10 +503,62 @@ section{
 
 
 // 🥚contact.html
+
+// info-container
 .info-container{
-  background-color: yellow;
+  .box-container{
+
+    // 🥒css320
+    @include grid(31rem);
+
+    .box{
+      background: $white;
+
+      border-radius: 0.5rem;
+      text-align: center;
+      padding: 2rem;
+      border: $border;
+      box-shadow: $box-shadow;
+
+      i{
+        background: $blue;
+        font-size: 2.5rem;
+
+        height: 7.5rem;
+        width: 7.5rem;
+        line-height: 7.5rem;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+        color: $white;
+      }
+
+
+      h3{
+        font-size: 2rem;
+        padding: 0.5rem 0;
+        color: $black;
+      }
+
+      p{
+        font-size: 1.5rem;
+        line-height: 2;
+        color: $light-color;
+      }
+
+
+
+    }
+  }
 }
 
+
+// contact - form, input, map
+
+.contact{
+  display: flex;
+
+  background-color: yellow;
+}
 
 
 
