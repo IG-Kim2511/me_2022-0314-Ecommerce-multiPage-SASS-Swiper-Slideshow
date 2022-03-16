@@ -168,14 +168,14 @@ section {
   color: gold;
 }
 
-#search-btn {
+.search-btn {
   display: none;
 }
 
 .side-bar {
   position: fixed;
   top: 0;
-  left: -110%;
+  right: -110%;
   height: 100%;
   width: 30rem;
   background: #fff;
@@ -183,12 +183,12 @@ section {
 }
 
 .side-bar.active {
-  left: 0;
+  right: 0;
   -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
           box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
 }
 
-.side-bar #close-side-bar {
+.side-bar .close-side-bar {
   position: absolute;
   top: 1rem;
   right: 2rem;
@@ -197,7 +197,7 @@ section {
   color: #666;
 }
 
-.side-bar #close-side-bar:hover {
+.side-bar .close-side-bar:hover {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   color: #333;
@@ -521,7 +521,7 @@ section {
 }
 
 @media (max-width: 768px) {
-  #search-btn {
+  .search-btn {
     display: inline-block;
   }
   .header .search-form {

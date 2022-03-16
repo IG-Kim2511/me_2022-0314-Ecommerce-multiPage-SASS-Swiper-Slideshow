@@ -1,4 +1,23 @@
 
+// 🍀js1212.sideBar 👉main.scss
+
+// let sideBar = document.querySelector('.side-bar');
+// let menuBtn = document.querySelector('#menu-btn');
+// let closeSideBar = document.querySelector('#close-side-bar');
+
+// menuBtn.addEventListener('click',()=>{
+//         sideBar.classList.toggle('active');
+// });
+// closeSideBar.addEventListener('click',()=>{
+//         sideBar.classList.remove('active');
+// });
+
+
+
+
+function menuBtn() {
+    document.querySelector('.side-bar').classList.toggle('active');
+}
 
 
 // 🍀js1142. nav, footer rendering
@@ -76,3 +95,6 @@ footerElm.innerHTML=`
             <img src="images/card_img.png" alt="">
         </section>
 `;
+
+
+

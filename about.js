@@ -1,5 +1,7 @@
+
+
 //🍀js0501- Swiper.js library 👉about.html
-let swiper = new Swiper(".review-slider", {
+let swiper_about = new Swiper(".review-slider", {
     loop:true,
 
     grabCursor:true,

@@ -35,6 +35,7 @@ $box-shadow : 0 .5rem 1rem rgba(0,0,0,.2);
     outline: none; border:none;
     text-transform: capitalize;
     transition: all .2s linear;
+    
 
     
 }
@@ -179,7 +180,7 @@ section{
 }
 
 // 🥒responsive
-#search-btn{   
+.search-btn{   
     display: none;
 }
   
@@ -187,7 +188,7 @@ section{
 
     // 🥒responsive
     position: fixed;
-    top: 0; left: -110%;
+    top: 0; right: -110%;
 
     height: 100%;
     width: 30rem;
@@ -197,12 +198,12 @@ section{
 
     // 🥒js1212, .active (:active 틀림)
     &.active{
-        left: 0;
+        right: 0;
         // 🦄rgba(0,0,0,0.7); - 불투명
         box-shadow: 0 0 0 100vw rgba(0,0,0,0.7); 
     }
 
-    #close-side-bar{
+    .close-side-bar{
         position: absolute;
         top: 1rem; right: 2rem;
 
@@ -573,7 +574,7 @@ section{
 
 @media (max-width:768px){
   
-    #search-btn{
+    .search-btn{
       display: inline-block;
     }
   
