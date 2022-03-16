@@ -156,6 +156,8 @@ section {
 
 .side-bar {
   position: fixed;
+  top: 0;
+  left: -110%;
   height: 100%;
   width: 30rem;
   background: #fff;
@@ -235,6 +237,52 @@ section {
 
 .side-bar .navbar a i {
   padding-right: .5rem;
+}
+
+.home {
+  background: #fff;
+}
+
+.home .slide {
+  min-height: 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.home .slide .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1  1 42rem;
+          flex: 1  1 42rem;
+  text-align: center;
+}
+
+.home .slide .image img {
+  height: 70rem;
+}
+
+.home .slide .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+}
+
+.home .slide .content span {
+  font-size: 2rem;
+  color: #0984e3;
+}
+
+.home .slide .content h3 {
+  padding-top: 0.5rem;
+  color: #333;
+  font-size: 3rem;
 }
 
 .swiper-button-next::after,

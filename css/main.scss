@@ -165,7 +165,7 @@ section{
 
     // 🥒responsive
     position: fixed;
-    // top: 0; left: -110%;
+    top: 0; left: -110%;
 
     height: 100%;
     width: 30rem;
@@ -251,26 +251,46 @@ section{
 
 // 🥚home
 
+.home{
+    background: $white;
+    
 
+    .slide{
+        min-height: 40rem;
 
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
 
+        gap: 2rem;
 
+        padding: 2rem 0 ;
 
+        .image{
+            flex: 1  1 42rem;
+            text-align: center;
 
+            img{
+                height: 70rem;
+            }
+        }
 
+        .content{
+            flex: 1 1 42rem;
 
+            span{
+                font-size: 2rem;
+                color: $blue;
+            }
 
-
-
-
-
-
-
-
-
-
-
-
+            h3{
+                padding-top: 0.5rem;
+                color: $black;
+                font-size: 3rem;
+            }
+        }
+    }
+}
 
 
 
