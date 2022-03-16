@@ -172,7 +172,9 @@ section{
     background: $white;
     z-index: 10000;
 
-    &:active{
+
+    // 🥒js1212, .active (:active 틀림)
+    &.active{
         left: 0;
         // 🦄rgba(0,0,0,0.7); - 불투명
         box-shadow: 0 0 0 100vw rgba(0,0,0,0.7); 

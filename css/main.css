@@ -164,7 +164,7 @@ section {
   z-index: 10000;
 }
 
-.side-bar:active {
+.side-bar.active {
   left: 0;
   -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
           box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
