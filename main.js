@@ -18,17 +18,17 @@ closeSideBar.addEventListener('click',()=>{
 
 
 
-// 🍀searchForm
+// 🍀js0130.searchForm 👉all html, 👉main.scss
 
-// let searchForm = document.querySelector('.search-form');
+let searchForm = document.querySelector('.search-form');  
 
-// document.querySelector('#search-btn').onclick = () =>{
-//     searchForm.classList.toggle('active');
-// }
+document.querySelector('.search-btn').onclick = () =>{
+    searchForm.classList.toggle('active');
+}
 
-// window.onscroll = () =>{
-//     sideBar.classList.remove('active');
-//     searchForm.classList.remove('active');
-// };
+window.onscroll = () =>{
+    sideBar.classList.remove('active');
+    searchForm.classList.remove('active');
+};
 
 
