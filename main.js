@@ -1,5 +1,5 @@
 // 🍀js0432 - Swiper.js library 👉index.html  👉main.scss
-var swiper = new Swiper(".home-slider", {
+let swiper = new Swiper(".home-slider", {
   loop: true,
   grabCursor: true,
   navigation: {
@@ -8,23 +8,6 @@ var swiper = new Swiper(".home-slider", {
   },
 });
 
-//🍀 js0501- Swiper.js library 👉about.html
-// var swiper = new Swiper(".review-slider", {
-//     loop:true,
-//     grabCursor:true,
-//     spaceBetween: 20,
-//     breakpoints: {
-//         450: {
-//           slidesPerView: 1,
-//         },
-//         768: {
-//           slidesPerView: 2,
-//         },
-//         1024: {
-//           slidesPerView: 3,
-//         },
-//     },
-// });
 
 
 
