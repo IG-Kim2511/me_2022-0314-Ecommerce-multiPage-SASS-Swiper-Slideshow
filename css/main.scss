@@ -526,7 +526,9 @@ section{
 
         height: 7.5rem;
         width: 7.5rem;
-        line-height: 7.5rem;
+
+        // 🍀line-height 응용
+        line-height: 7.5rem;  
         border-radius: 50%;
         margin-bottom: 0.5rem;
         color: $white;
@@ -556,11 +558,109 @@ section{
 
 .contact{
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  
+  form{
+    flex: 1 1 42rem;
 
-  background-color: yellow;
+    h3{
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: $black;
+      padding-bottom: 1rem;
+    }
+
+    p{
+      font-size: 1.5rem;
+      color: $light-color;
+      padding: 1rem 0;
+
+      // 🍀line-height 응용
+      line-height: 2;
+
+    }
+    
+    .inputBox{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      input{
+        width: 49%;
+      }
+    }
+
+    .inputBox input, 
+    textarea{
+      padding:1.2rem 1.4rem;
+      border-radius: .5rem;
+      box-shadow: $box-shadow;
+      border:$border;
+      background: $white;
+      text-transform: none;
+      color:$light-color;
+      font-size: 1.5rem;
+      margin:.7rem 0;
+    }
+
+    // 🍀css404. textarea styling , resize:none
+    textarea{
+      height: 15rem;
+      resize: none;
+      width: 100%;
+    } 
+  }
+
+  // 🥒html410
+  .map{
+    flex: 1 1 42rem;
+    width: 100%;
+  }
 }
 
 
+.newsletter{
+  background: $blue;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  .contact{
+    flex: 1 1 42rem;
+
+    h3{
+      font-size: 6rem;
+      color: $white;
+    }
+
+    p{
+      font-size: 2.2rem;
+      color: $white;
+    }
+  }
+
+  form{
+    flex: 1 1 42rem;
+    background: $white;
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+    .email{
+      width: 100%;
+      padding: 0 1.4rem;
+      text-transform: none;
+      color: $light-color;
+      font-size: 1.6rem;
+    }
+
+    .btn{
+      margin-top: 0;
+    }
+  }
+}
 
 
 
