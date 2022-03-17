@@ -476,18 +476,24 @@ section {
 
       &:hover .image{
 
-        .hover-img{
+        // .hover-img{
+        //   display: inline-block;
+        // }
 
-          display: inline-block;
+        // .main-img{
+        //   display: none;
+        // }
+
+        img{
+         transform: scale(90%);
         }
 
-        .main-img{
-          display: none;
-        }
 
         .icons{
           left: 1rem;
         }
+
+    
       }
 
 

@@ -441,12 +441,9 @@ section {
   overflow: hidden;
 }
 
-.products .box-container .box:hover .image .hover-img {
-  display: inline-block;
-}
-
-.products .box-container .box:hover .image .main-img {
-  display: none;
+.products .box-container .box:hover .image img {
+  -webkit-transform: scale(90%);
+          transform: scale(90%);
 }
 
 .products .box-container .box:hover .image .icons {
