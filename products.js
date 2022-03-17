@@ -3,18 +3,17 @@
 
 const url = `https://fakestoreapi.com/products/`;
 
-// 🥒js417
+// 🥒js417, inStock, numberOfUnit, ...object에 추가  
+//🥒 addToCart
 let cart =[];
 
-// let loading = true;
-
+// let cart = JSON.parse(localStorage.getItem("CART")) || [];
 
 
 function getFakeStore() {
     fetch(url)
     .then((res) => res.json())
     .then((a_datas) => {
-
 
         //🍀js518 loading화면 만들기 👉products.html
         /* 
@@ -24,8 +23,7 @@ function getFakeStore() {
         */
         document.querySelector('.products .heading').innerHTML =`products `;
         
-        // loading= false;
-
+      
         console.log(a_datas);
 
         /*🍉 ~~~coding~~~ */
@@ -54,6 +52,12 @@ getFakeStore();
 
 
 //🍀js315. rendering Products
+
+/* 
+  🦄onClick 사용  - 🥒js13, addToCart
+    JS로 rendering한 element에 variable할 수 없을 때..
+    rendering할때, onClick 넣으면 간단함!!    
+*/
 const boxContainer = document.querySelector('.products .box-container');
         
 function renderProducts() {
@@ -85,22 +89,6 @@ function renderProducts() {
         `  
     });  
 }
-
-
-
-// // loading
-// window.addEventListener('load', () => {    
-//     if (!loading) {
-//         document.querySelector('.products .heading').innerHTML =`loading`;
-//         console.log('loading')
-//     }else{
-//         renderProducts();
-//     }
-// });
-
-
-
-
 
 
 
