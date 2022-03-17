@@ -15,6 +15,7 @@ let cart =[];
 // let cart = JSON.parse(localStorage.getItem("CART")) || [];
 
 
+// Fetching data
 function getFakeStore() {
     fetch(url)
     .then((res) => res.json())
@@ -53,6 +54,24 @@ function getFakeStore() {
 getFakeStore();
 
 
+// 🍀js13-40.update Cart
+// 🍀js45. localStorage. save cart to local  storage
+/* 
+   🦄설명:
+   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
+*/
+
+function updateCart() {
+    // renderCartItems();
+    // renderSubtotal();
+
+    // js 45-10, js45-20
+    localStorage.setItem('CART',cart);
+    // localStorage.setItem('CART',JSON.stringify(cart));    
+}
+updateCart();
+
+
 //🍀js315. rendering Products
 /* 
    🦄설명:
@@ -84,7 +103,7 @@ function renderProducts() {
                         <i class="fas fa-star-half-alt"></i>
                     </div>
                     <div class="price">inventory: ${p_product.inStock}</div>
-                    <a class="btn" onclick="addToCart(${p_product.id})">add to cart</a>
+                    <button class="btn" onclick="addToCart(${p_product.id})">add to cart</button>
                 </div>
             </div>
         `  
@@ -103,13 +122,15 @@ function renderProducts() {
 function addToCart(p_id) {
 
     // 🍉js13-30
-    if (cart.some(pp_item => pp_item.id ===p_id)) {
+    if (dataProducts.some(pp_item => pp_item.id ===p_id)) {
         
         changeNumberOfUnits('plus',p_id);
         
     // 🍉js13-20
     } else {
-        const item = dataProducts.find( pp_product => pp_product.id === p_id);
+        const item = dataProducts.find( pp_product => pp_product.id === p_id);  //🍤bug
+
+        console.log(item)
 
         // cart.push(item);
         cart.push(
@@ -139,79 +160,67 @@ function addToCart(p_id) {
 
 
 
-// 🍀js13-40.update Cart
-// 🍀js45. localStorage. save cart to local  storage
-/* 🍄js45. 
-
-    10. localStorage.setItem : update할때마다 local에 저장 
-
-    20. JSON.stringify(): array -> json으로 저장
-
-    30. localStorage.getItem : local에서 pull
-
-    40. json.parse.. : array로 만듬
-
-    50 updadeCart호출... -> renderCartItems에 적용
-
-    60.  || []; 추가 : 첫 화면의 empty array에서도 실행되게...
-*/
-
-
-function updateCart() {
-    // renderCartItems();
-    // renderSubtotal();
-
-    // js 45-10, js45-20
-    localStorage.setItem('CART',cart);
-    // localStorage.setItem('CART',JSON.stringify(cart));    
-}
-updateCart();
-
 
 
 
 // 🍀js28. + - 버튼 클릭한때, change Number Of Units, 
-/* 🦄
-return { ~ } 형식 가능함
-
-action, id...2개의 parameter 가져와서 사용하는 알고리즘
+/* 
+   🦄설명:
+   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
 */
 
-/* 🍄
-10. cart 안의 item.id === onclick으로 넘어온 id가 같다면...함수실행
 
- 10-10. minus + 1보다 큰때에만 적용
+// function changeNumberOfUnits(action, id) {
+//     cart = cart.map((item) => {
+//       let numberOfUnits = item.numberOfUnits;
+  
+//       if (item.id === id) {
+//         if (action === "minus" && numberOfUnits > 1) {
+//           numberOfUnits--;
+//         } else if (action === "plus" && numberOfUnits < item.instock) {
+//           numberOfUnits++;          
+//         }         
+//         else if (action === "plus" && numberOfUnits === item.instock) {
+//             alert('out of stock');            
+//           }  
+//       }
+  
+//       return {
+//         ...item,
+  
+//         numberOfUnits: numberOfUnits, /* 🥒js3510. */
+//       //   numberOfUnits,
+//       };
+//     });
+  
+//     updateCart();
+//   }
 
- 10-20. plus + instock보다 작을때에만 적용
+function changeNumberOfUnits(p_action, p_id) {
 
-20. cart 안의 item.id !== onclick으로 넘어온 id가 다르면... return : 바뀌지않은 이전 numberOfUnit 넣음. = 그대로 유지 (새 item... cart 칸에 추가)
-*/
+    cart = cart.map((p_item)=>{
+        let numberOfUnits = p_item.numberOfUnits;
 
-function changeNumberOfUnits(action, id) {
-    cart = cart.map((item) => {
-      let numberOfUnits = item.numberOfUnits;
-  
-      if (item.id === id) {
-        if (action === "minus" && numberOfUnits > 1) {
-          numberOfUnits--;
-        } else if (action === "plus" && numberOfUnits < item.instock) {
-          numberOfUnits++;          
-        }         
-        else if (action === "plus" && numberOfUnits === item.instock) {
-            alert('out of stock');            
-          }  
-      }
-  
-      return {
-        ...item,
-  
-        numberOfUnits: numberOfUnits, /* 🥒js3510. */
-      //   numberOfUnits,
-      };
-    });
-  
-    updateCart();
-  }
+        if (p_item.id === p_id) {
+
+            if (p_action ===  "minus" && numberOfUnits > 1) {
+
+                numberOfUnits--;
+                
+            } else if (p_action ===  "minus" && numberOfUnits <  p_item.inStock) {
+
+                numberOfUnits++;
+                
+            }else if(p_action ==="plus" && numberOfUnits ===p_item.inStock){
+                alert(`sorry. it's out of stock.`);
+                
+            }
+            
+        }
+
+    })
+    
+}
 
   
 
