@@ -57,7 +57,7 @@ getFakeStore();
 const boxContainer = document.querySelector('.products .box-container');
         
 function renderProducts() {
-    cart.forEach((p_product)=>{        
+    cart.forEach((p_product)=>{          
         boxContainer.innerHTML += `
             <div class="box">
                 <div class="image">
