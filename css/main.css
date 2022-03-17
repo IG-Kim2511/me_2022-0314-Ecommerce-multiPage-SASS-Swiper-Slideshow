@@ -42,7 +42,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: #0984e3;
+  background: #d61319;
   border-radius: 5rem;
 }
 
@@ -62,7 +62,7 @@ section {
 }
 
 .heading span {
-  color: #0984e3;
+  color: #d61319;
 }
 
 .coding {
@@ -80,7 +80,7 @@ section {
   font-size: 1.7rem;
   color: #fff;
   cursor: pointer;
-  background: #0984e3;
+  background: #d61319;
 }
 
 .btn:hover {
@@ -94,7 +94,7 @@ section {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #0984e3;
+  background: #d61319;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,7 +146,7 @@ section {
 }
 
 .header .search-form label:hover {
-  color: #0984e3;
+  color: #d61319;
 }
 
 .header .icons {
@@ -227,7 +227,7 @@ section {
 
 .side-bar .user a {
   font-size: 1.5rem;
-  color: #0984e3;
+  color: #d61319;
 }
 
 .side-bar .user a:hover {
@@ -246,7 +246,7 @@ section {
 }
 
 .side-bar .navbar a:hover {
-  color: #0984e3;
+  color: #d61319;
 }
 
 .side-bar .navbar a:hover i {
@@ -294,7 +294,7 @@ section {
 
 .home .slide .content span {
   font-size: 2rem;
-  color: #0984e3;
+  color: #d61319;
 }
 
 .home .slide .content h3 {
@@ -373,7 +373,7 @@ section {
 }
 
 .quick-links .credit p span {
-  color: #0984e3;
+  color: #d61319;
 }
 
 .quick-links .credit img {
@@ -455,7 +455,7 @@ section {
 }
 
 .products .box-container .box .image img {
-  height: 30rem;
+  height: 20rem;
   -webkit-animation: fadeIn 0.2s linear;
           animation: fadeIn 0.2s linear;
 }
@@ -483,7 +483,7 @@ section {
 }
 
 .products .box-container .box .image .icons a:hover {
-  background: #0984e3;
+  background: #d61319;
 }
 
 .shopping-cart .box-container {
@@ -560,7 +560,7 @@ section {
 
 .shopping-cart .box-container .box .content .price {
   font-size: 2rem;
-  color: #0984e3;
+  color: #d61319;
 }
 
 .shopping-cart .box-container .box .content .price span {
@@ -587,7 +587,7 @@ section {
 }
 
 .shopping-cart .cart-total h3 span {
-  color: #0984e3;
+  color: #d61319;
 }
 
 .faq .accordion-container {
@@ -607,7 +607,7 @@ section {
 }
 
 .faq .accordion-container .accordion.active .accordion-heading {
-  background: #0984e3;
+  background: #d61319;
 }
 
 .faq .accordion-container .accordion.active .accordion-heading i {
@@ -679,7 +679,7 @@ section {
 }
 
 .review .slide span {
-  color: #0984e3;
+  color: #d61319;
   font-size: 1.7rem;
 }
 
@@ -709,7 +709,7 @@ section {
 }
 
 .info-container .box-container .box i {
-  background: #0984e3;
+  background: #d61319;
   font-size: 2.5rem;
   height: 7.5rem;
   width: 7.5rem;
@@ -803,7 +803,7 @@ section {
 }
 
 .newsletter {
-  background: #0984e3;
+  background: #d61319;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -920,7 +920,7 @@ section {
 
 .register form .btn.link:hover,
 .login form .btn.link:hover {
-  background: #0984e3;
+  background: #d61319;
 }
 
 .register form p,
