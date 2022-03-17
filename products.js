@@ -23,16 +23,51 @@ function getFakeStore() {
         console.log(a_datas);
         /*🍉 ~~~coding~~~ */
      
-        dataProductAll.push(a_datas);
-        console.log(dataProductAll[0])
+        // dataProductAll.push(a_datas);
+        // console.log(dataProductAll[0])
         
-        a_datas.forEach((a_data) => {
-            if (a_data.price > 100) {
-                dataProductOver100.push(a_data)            
-            }  
-        });
+        // a_datas.forEach((a_data) => {
+        //     if (a_data.price > 100) {
+        //         dataProductOver100.push(a_data)            
+        //     }  
+        // });
         
-        console.log(dataProductOver100)
+        // console.log(dataProductOver100)
+
+        
+        const boxContainer = document.querySelector('.products .box-container');
+
+        // console.log(dataProductAll)
+
+
+        renderProducts();
+        function renderProducts() {
+            a_datas.forEach((p_product)=>{        
+                boxContainer.innerHTML += `    
+                    <div class="box">
+                        <div class="icons">
+                            <button href="#" class="fas fa-heart"></button>             
+                            <button href="#" class="fas fa-shopping-cart"  onclick="addToCart(${p_product.id})"></button>
+                        </div>
+                        <img src="${p_product.imgSrc}" alt="">
+                        <div class="content">
+                            <h3>${p_product.name}</h3>
+                            <div class="price">$${p_product.price} <span>$60</span></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="price">inventory: ${p_product.instock}</div>
+                            <a class="btn" onclick="addToCart(${p_product.id})">add to cart</a>
+                        </div>
+                    </div>
+                `  
+            });  
+        }
+
     });    
 }
 
@@ -50,9 +85,6 @@ function getFakeStore() {
     rendering할때, onClick 넣으면 간단함!!    
 */
             
-boxContainer = document.querySelector('.products .box-container');
-
-console.log(dataProductAll)
 
 
 // loading
@@ -65,57 +97,8 @@ console.log(dataProductAll)
 //     }
 // });
 
-renderProducts();
-function renderProducts() {
-    dataProductAll.forEach((p_product)=>{        
-        boxContainer.innerHTML += `    
-                <div class="box">
-                    <div class="image">
-                        <img src="images/product-1.jpg" class="main-img" alt="">                    
-                        <div class="icons">
-                            <a href="#" class="fas fa-shopping-cart"></a>
-                            <a href="#" class="fas fa-search-plus"></a>
-                            <a href="#" class="fas fa-heart"></a>
-                            <a href="#" class="fas fa-share"></a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>smartphone</h3>
-                        <div class="price">$249.99 <span>$399.99</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-        `  
-    });  
-}
 
 
 
 
-// <div class="box">
-//     <div class="icons">
-//         <button href="#" class="fas fa-heart"></button>             
-//         <button href="#" class="fas fa-shopping-cart"  onclick="addToCart(${p_product.id})"></button>
-//     </div>
-//     <img src="${p_product.imgSrc}" alt="">
-//     <div class="content">
-//         <h3>${p_product.name}</h3>
-//         <div class="price">$${p_product.price} <span>$60</span></div>
-//         <div class="stars">
-//             <i class="fas fa-star"></i>
-//             <i class="fas fa-star"></i>
-//             <i class="fas fa-star"></i>
-//             <i class="fas fa-star"></i>
-//             <i class="far fa-star"></i>
-//         </div>
-//         <div class="price">inventory: ${p_product.instock}</div>
-//         <a class="btn" onclick="addToCart(${p_product.id})">add to cart</a>
-//     </div>
-// </div>
 
