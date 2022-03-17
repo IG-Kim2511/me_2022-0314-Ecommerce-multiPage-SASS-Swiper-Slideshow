@@ -3,10 +3,15 @@
 
 const url = `https://fakestoreapi.com/products/`;
 
-// 🥒js417, inStock, numberOfUnit, ...object에 추가  
+// 🥒js417, fetched dataProducts + inStock, numberOfUnit, ...object에 추가  
 //🥒 addToCart
-let cart =[];
+let dataProducts =[];
+console.log(dataProducts);
 
+
+
+// cart 
+let cart =[];
 // let cart = JSON.parse(localStorage.getItem("CART")) || [];
 
 
@@ -21,8 +26,7 @@ function getFakeStore() {
         
          20. fetch 완료하면, innerHTML로 새로운 텍스트 넣음
         */
-        document.querySelector('.products .heading').innerHTML =`products `;
-        
+        document.querySelector('.products .heading').innerHTML =`products `;        
       
         console.log(a_datas);
 
@@ -32,14 +36,12 @@ function getFakeStore() {
         // 🍀js417. fetched datas에 inStock 넣기
         a_datas.forEach((p_data)=>{
 
-            cart.push(
+            dataProducts.push(
                 {
                     ...p_data,
                     inStock:10,                    
                 });
         });
-
-        console.log(cart);
 
 
         // 🥒js315. 
@@ -63,11 +65,11 @@ getFakeStore();
 const boxContainer = document.querySelector('.products .box-container');
         
 function renderProducts() {
-    cart.forEach((p_product)=>{          
+    dataProducts.forEach((p_product)=>{          
         boxContainer.innerHTML += `
             <div class="box">
                 <div class="image">
-                    <img src="${p_product.image}"  class="main-img" alt="">                    
+                    <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
                     <div class="icons">
                         <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
                         <a href="#" class="fas fa-heart"></a>
@@ -129,31 +131,70 @@ function renderProducts() {
     40. -> updateCart -> renderCartItems : cart에 아이템 render
 */
 
+
+
+// function addToCart(p_id) {
+
+//     // 🍉js13-30
+//     if (cart.some((pp_item) => pp_item.id === p_id)) {      
+
+//         alert(`This item is already on the cart`);
+
+//         changeNumberOfUnits('plus',p_id)                    
+//     } 
+//     // 🍉js13-20
+//     else {
+//         const item = productsData.find((pp_product) => pp_product.id === p_id);
+
+//         // cart.push(item);
+//         cart.push(
+//             {
+//                 ...item,
+//                 numberOfUnits: 1,
+//             }
+//         );
+//     }
+//     console.log(cart)
+//     updateCart();         
+// }
+
 function addToCart(p_id) {
-
     // 🍉js13-30
-    if (cart.some((pp_item) => pp_item.id === p_id)) {      
 
-        alert(`This item is already on the cart`);
+    if (cart.some(pp_item => pp_item.id ===p_id)) {
 
-        changeNumberOfUnits('plus',p_id)                    
-    } 
-    // 🍉js13-20
-    else {
-        const item = productsData.find((pp_product) => pp_product.id === p_id);
+        console.log('already')
+        changeNumberOfUnits('plus',p_id);
+        
+    } else {
+        const item = dataProducts.find( pp_product => pp_product.id === p_id);
 
         // cart.push(item);
         cart.push(
             {
                 ...item,
-                numberOfUnits: 1,
+                numberOfUnits : 1,
             }
-        );
+        )
+        
     }
-    console.log(cart)
-    updateCart();     
+    updateCart();
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 🍀js13-40.update Cart
 // 🍀js45. localStorage. save cart to local  storage
