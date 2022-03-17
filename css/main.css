@@ -441,15 +441,6 @@ section {
   overflow: hidden;
 }
 
-.products .box-container .box:hover .image img {
-  -webkit-transform: scale(90%);
-          transform: scale(90%);
-}
-
-.products .box-container .box:hover .image .icons {
-  left: 1rem;
-}
-
 .products .box-container .box .image {
   position: relative;
 }
@@ -484,6 +475,15 @@ section {
 
 .products .box-container .box .image .icons a:hover {
   background: #d61319;
+}
+
+.products .box-container .box:hover .image img {
+  -webkit-transform: scale(90%);
+          transform: scale(90%);
+}
+
+.products .box-container .box:hover .image .icons {
+  left: 1rem;
 }
 
 .shopping-cart .box-container {

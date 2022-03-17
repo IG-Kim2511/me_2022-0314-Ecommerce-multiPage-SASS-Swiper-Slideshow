@@ -2,43 +2,36 @@
 // 🍀js0211. fetch
 
 const url = `https://fakestoreapi.com/products/`;
-let dataProductOver100 = [];
-
-let dataProductAll =[];
 
 // 🥒js417
 let cart =[];
 
-// let loading = false;
+// let loading = true;
 
-console.log(dataProductAll)
 
-getFakeStore();
+
 function getFakeStore() {
     fetch(url)
     .then((res) => res.json())
     .then((a_datas) => {
+
+
+        //🍀js518 loading화면 만들기 👉products.html
+        /* 
+         10. html 기본.."loading" 메시지
         
-        // loading=true;
+         20. fetch 완료하면, innerHTML로 새로운 텍스트 넣음
+        */
+        document.querySelector('.products .heading').innerHTML =`products `;
+        
+        // loading= false;
+
         console.log(a_datas);
 
         /*🍉 ~~~coding~~~ */
-     
-        // dataProductAll.push(a_datas);
-        // console.log(dataProductAll[0])
-        
-        // a_datas.forEach((a_data) => {
-        //     if (a_data.price > 100) {
-        //         dataProductOver100.push(a_data)            
-        //     }  
-        // });
-        
-        // console.log(dataProductOver100)  
-        // console.log(dataProductAll)
 
 
-
-        // 🍀js417. fetched datas에 inStock  넣기
+        // 🍀js417. fetched datas에 inStock 넣기
         a_datas.forEach((p_data)=>{
 
             cart.push(
@@ -51,79 +44,63 @@ function getFakeStore() {
         console.log(cart);
 
 
+        // 🥒js315. 
+        // 🦄 실행 코드는 fetch 함수안에 넣어야 에러없이 작동함. 밖에 있으면 fetch data되기전에 그 함수가 실행되서 rendering이 안됨
 
-
-
-        let boxContainer = document.querySelector('.products .box-container');
-        
-        function renderProducts() {
-            a_datas.forEach((p_product)=>{        
-                boxContainer.innerHTML += `    
-                   
-
-                    <div class="box">
-                        <div class="image">
-                            <img src="${p_product.image}"  class="main-img" alt="">                    
-                            <div class="icons">
-                                <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
-                                <a href="#" class="fas fa-heart"></a>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h3>${p_product.title}</h3>
-                            <div class="price">$${p_product.price}</div>
-                            
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <div class="price">inventory: ${p_product.instock}</div>
-                            <a class="btn" onclick="addToCart(${p_product.id})">add to cart</a>
-                        </div>
-                    </div>
-
-
-                `  
-            });  
-        }
         renderProducts();
-
-        
-        function myFunction() {
-            
-          }
-
     });    
+}
+getFakeStore();
+
+
+//🍀js315. rendering Products
+const boxContainer = document.querySelector('.products .box-container');
+        
+function renderProducts() {
+    cart.forEach((p_product)=>{        
+        boxContainer.innerHTML += `
+            <div class="box">
+                <div class="image">
+                    <img src="${p_product.image}"  class="main-img" alt="">                    
+                    <div class="icons">
+                        <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>${p_product.title}</h3>
+                    <div class="price">$${p_product.price}</div>
+                    
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">inventory: ${p_product.inStock}</div>
+                    <a class="btn" onclick="addToCart(${p_product.id})">add to cart</a>
+                </div>
+            </div>
+        `  
+    });  
 }
 
 
 
+// // loading
+// window.addEventListener('load', () => {    
+//     if (!loading) {
+//         document.querySelector('.products .heading').innerHTML =`loading`;
+//         console.log('loading')
+//     }else{
+//         renderProducts();
+//     }
+// });
 
-// function addToCart(p_id) {    
-//     // 🍉js13-30
-//     // if (cart.some((pp_item) => pp_item.id === p_id)) {      
-  
-//     //     alert(`This item is already on the cart`);
 
-//     //     changeNumberOfUnits('plus',p_id)                    
-//     // } 
-//     // 🍉js13-20
-//     // else {
-//         const item = productsData.find((pp_product) => pp_product.id === p_id);
 
-//         // cart.push(item);
-//         cart.push(
-//             {
-//                 ...item,
-//                 numberOfUnits: 1,
-//             }
-//         );
-//     // }
 
-// }
 
 
 
@@ -139,15 +116,6 @@ function getFakeStore() {
     rendering할때, onClick 넣으면 간단함!!    
 */
             
-// loading
-// window.addEventListener('load', () => {    
-//     if (loading) {
-//         boxContainer.innerHTML =`<div>loading</div>`;
-//         console.log('loading')
-//     }else{
-//         renderProducts();
-//     }
-// });
 
 
 

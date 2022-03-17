@@ -477,37 +477,14 @@ section {
       border-radius: 0.5rem;
       overflow: hidden;
 
-
-      &:hover .image{
-
-        // .hover-img{
-        //   display: inline-block;
-        // }
-
-        // .main-img{
-        //   display: none;
-        // }
-
-        img{
-         transform: scale(90%);
-        }
-
-
-        .icons{
-          left: 1rem;
-        }
-
-    
-      }
-
-
       .image{
 
         position: relative;
 
         img{
-          height: 20rem;
+          height: 20rem;          
           animation: fadeIn 0.2s linear;
+
         }
 
         .hover-img{
@@ -536,7 +513,25 @@ section {
             }
           }
         }
+      }
 
+      &:hover .image{
+
+        // .hover-img{
+        //   display: inline-block;
+        // }
+
+        // .main-img{
+        //   display: none;
+        // }
+
+        img{
+         transform: scale(90%);
+        }
+
+        .icons{
+          left: 1rem;
+        }    
       }
     }
 
