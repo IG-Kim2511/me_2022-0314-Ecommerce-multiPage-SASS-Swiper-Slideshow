@@ -2,7 +2,7 @@
 
 // 🥚sass functions
 
-$blue : #0984e3;
+$blue : #d61319;
 $black : #333;
 $white : #fff;
 $gold : gold;
@@ -170,6 +170,7 @@ section {
 
   .icons {
     display: flex;
+    
   }
 
   .icons a,
@@ -177,6 +178,7 @@ section {
     font-size: 2.5rem;
     margin-left: 2rem;
     color: $white;
+
     cursor: pointer;
 
     &:hover {
@@ -366,6 +368,8 @@ section {
       margin: 0 1rem;
       color: $white;
 
+
+
       &:hover {
         color: $gold;
       }
@@ -473,37 +477,14 @@ section {
       border-radius: 0.5rem;
       overflow: hidden;
 
-
-      &:hover .image{
-
-        // .hover-img{
-        //   display: inline-block;
-        // }
-
-        // .main-img{
-        //   display: none;
-        // }
-
-        img{
-         transform: scale(90%);
-        }
-
-
-        .icons{
-          left: 1rem;
-        }
-
-    
-      }
-
-
       .image{
 
         position: relative;
 
         img{
-          height: 30rem;
+          height: 20rem;          
           animation: fadeIn 0.2s linear;
+
         }
 
         .hover-img{
@@ -532,7 +513,25 @@ section {
             }
           }
         }
+      }
 
+      &:hover .image{
+
+        // .hover-img{
+        //   display: inline-block;
+        // }
+
+        // .main-img{
+        //   display: none;
+        // }
+
+        img{
+         transform: scale(90%);
+        }
+
+        .icons{
+          left: 1rem;
+        }    
       }
     }
 
