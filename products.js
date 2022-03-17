@@ -54,14 +54,11 @@ getFakeStore();
 
 
 //🍀js315. rendering Products
-
 /* 
-  🦄onClick 사용  - 🥒js13, addToCart
-    JS로 rendering한 element에 variable할 수 없을 때..
-    rendering할때, onClick 넣으면 간단함!!    
-
-    🦄innerHTML += 사용 
+   🦄설명:
+   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
 */
+
 const boxContainer = document.querySelector('.products .box-container');
         
 function renderProducts() {
@@ -99,73 +96,18 @@ function renderProducts() {
 // 🍀js13. addToCart, 새로운 항목 numberOfUnit...object에 추가하기
 
 /* 
-    🦄object....ID 찾아서 전체 목록 불러오기
-
-    object.find((~)=>{~})
+   🦄설명:
+   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
 */
-
-/* 
-    🦄array 문법... objectArray에 사용 가능함
-
-    Ok : objectArray.find((~)=> ~ === ~ )
-
-    x : objectArray.find((~)=> { ~ === ~ } )
-*/
-
-/* 🍄js13
-    10. 빈 array ...variable 만듬 ->  let cart 
-
-    20. click한 아이템id !== products.js파일의 id 다르면, cart화면에 추가
-    array.find() : array에서 조건에 맞는것을 찾음
-
-    find..찾아낸 object ->  const item
-    ...spread operator
-    products.js의 오브젝트 목록에 numberOfUnits:1 추가 (첫번째 아이템...)
-
-    30. click한 아이템id === products.js파일의 id 같으면, cart화면에 추가 x... 수량 up & down
-    ->🥒js28. changeNumberOfUnits함수 실행
-
-    array.some() : array에 조건에 맞는게 있으면 true..return함
-    ->🥒js09. onClick
-
-    40. -> updateCart -> renderCartItems : cart에 아이템 render
-*/
-
-
-
-// function addToCart(p_id) {
-
-//     // 🍉js13-30
-//     if (cart.some((pp_item) => pp_item.id === p_id)) {      
-
-//         alert(`This item is already on the cart`);
-
-//         changeNumberOfUnits('plus',p_id)                    
-//     } 
-//     // 🍉js13-20
-//     else {
-//         const item = productsData.find((pp_product) => pp_product.id === p_id);
-
-//         // cart.push(item);
-//         cart.push(
-//             {
-//                 ...item,
-//                 numberOfUnits: 1,
-//             }
-//         );
-//     }
-//     console.log(cart)
-//     updateCart();         
-// }
 
 function addToCart(p_id) {
+
     // 🍉js13-30
-
     if (cart.some(pp_item => pp_item.id ===p_id)) {
-
-        console.log('already')
+        
         changeNumberOfUnits('plus',p_id);
         
+    // 🍉js13-20
     } else {
         const item = dataProducts.find( pp_product => pp_product.id === p_id);
 
@@ -178,8 +120,9 @@ function addToCart(p_id) {
         )
         
     }
+    console.log(cart);
+
     updateCart();
-    
 }
 
 
