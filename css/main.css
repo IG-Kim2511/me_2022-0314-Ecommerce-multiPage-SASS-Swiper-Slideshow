@@ -512,7 +512,7 @@ section {
   position: relative;
 }
 
-.shopping-cart .box-container .box .fa-times {
+.shopping-cart .box-container .box .fa-xmark {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
@@ -521,7 +521,7 @@ section {
   cursor: pointer;
 }
 
-.shopping-cart .box-container .box .fa-times:hover {
+.shopping-cart .box-container .box .fa-xmark:hover {
   color: #333;
 }
 
