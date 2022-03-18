@@ -447,6 +447,7 @@ section {
 
 .products .box-container .box .image img {
   height: 20rem;
+  padding: 3rem;
   -webkit-animation: fadeIn 0.2s linear;
           animation: fadeIn 0.2s linear;
 }
@@ -511,7 +512,7 @@ section {
   position: relative;
 }
 
-.shopping-cart .box-container .box .fa-times {
+.shopping-cart .box-container .box .fa-xmark {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
@@ -520,7 +521,7 @@ section {
   cursor: pointer;
 }
 
-.shopping-cart .box-container .box .fa-times:hover {
+.shopping-cart .box-container .box .fa-xmark:hover {
   color: #333;
 }
 
