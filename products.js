@@ -9,6 +9,11 @@ let dataProducts =[];
 console.log(dataProducts)
 
 
+// 🥒 js704. category
+let dataProductsMen =[];
+console.log(dataProductsMen)
+
+
 // Fetching data
 function getFakeStore() {
     fetch(url)
@@ -23,7 +28,7 @@ function getFakeStore() {
         */
         document.querySelector('.products .heading').innerHTML =`products `;        
       
-        // 🍀js417. fetched datas에 inStock 넣기
+        // 🍀 js417. fetched datas에 inStock 넣기
         a_datas.forEach((p_data)=>{
             dataProducts.push(
                 {
@@ -31,6 +36,21 @@ function getFakeStore() {
                     inStock:10,                    
                 });
         });
+
+
+        // 🥒 js704. category
+        a_datas.forEach((p_data) => {
+            if (p_data.category === "men's clothing") {
+                
+                dataProductsMen.push(
+                    {
+                        ...p_data,
+                        inStock:10,                    
+                    });
+            }
+        });
+
+
 
         // 🥒js09. 
         // 🦄 실행 코드는 fetch 함수안에 넣어야 에러없이 작동함. 밖에 있으면 fetch data되기전에 그 함수가 실행되서 rendering이 안됨
@@ -79,6 +99,45 @@ function renderProducts() {
         `  
     });  
 }
+
+
+
+
+// 🍀 js704. category.....................🍚
+
+/* 
+category
+"jewelery"
+"men's clothing"
+"electronics"
+"women's clothing"
+
+
+*/
+const allElm= document.querySelector('.category .all');
+const menElm= document.querySelector('.category .men');
+const womenElm= document.querySelector('.category .women');
+const jewelryElm= document.querySelector('.category .jewelry');
+const electronicElm= document.querySelector('.category .electronic');
+
+// console.log(electronicElm)
+
+// menElm.addEventListener('click',()=>{
+//     // dataProducts.filter(pp_item =>pp_item.title ===);
+// });
+
+// console.log(dataProducts)
+
+// function category(p_id) {
+//    dataProducts= dataProducts.filter(pp_item => pp_item.category ==="men's clothing");
+
+//     console.log(dataProducts)    
+
+// }
+
+
+
+
 
 
 
@@ -199,23 +258,6 @@ deleteAllBtn.addEventListener('click',()=>{
 
 
 
-
-
-// 🍀js 704. category
-const allElm= document.querySelector('.category .all');
-const menElm= document.querySelector('.category .men');
-const womenElm= document.querySelector('.category .women');
-const jewelryElm= document.querySelector('.category .jewelry');
-const electronicElm= document.querySelector('.category .electronic');
-
-console.log(electronicElm)
-
-function category(p_id) {
- 
-    cart = cart.filter(pp_item => pp_item.id !==p_id);
-
-    updateCart_onCart();    
-}
 
 
 
