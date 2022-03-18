@@ -1,14 +1,21 @@
 
-    
+
+// variable
 const cartItemsEl = document.querySelector('.shopping-cart .box-container');
+
+const subTotalElm = document.querySelector('.shopping-cart .subtotal');
+const taxElm = document.querySelector('.shopping-cart .tax');
+const totalElm = document.querySelector('.shopping-cart .total');
+const numberOfItemsElm = document.querySelector('.shopping-cart .numberOfItems');
+
+
+
 
 // 🦄multi page : 저장된 localstorage data활용하기 - cart.js
 
 
 
-
-// 🥨 products.js에 같은 코드 있음
-//🥒 cart 
+//🥨 products.js  - 🥒 cart 
 // let cart =[];
 // 🥒js45-30,-40,-50,-60, localStorage
 let cart = JSON.parse(localStorage.getItem("CART")) || [];
@@ -56,12 +63,11 @@ function renderCartItems() {
 
 
 
-// 🍀js13-40.update Cart  
-// 🥨 products.js에 같은 코드 있음
+// 🥨 products.js  - 🍀js13-40.update Cart  
 
 function updateCart_onCart() {
     renderCartItems();
-    // renderSubtotal();
+    renderSubtotal();
 
     console.log(cart)
 
@@ -73,8 +79,7 @@ updateCart_onCart();
 
 
 
-// 🍀js28.  
-// 🥨 products.js에 같은 코드 있음
+// 🥨 products.js  - 🍀js28.  
 
 function changeNumberOfUnits(p_action, p_id) {
 
@@ -107,7 +112,51 @@ function changeNumberOfUnits(p_action, p_id) {
 }
 
 
-//🦄 🍀js35. calculate, renderSubtotal 
+//🥨 products.js 🍀js35. calculate, renderSubtotal 
+
+/* 
+
+const subtotalElm = document.querySelector('.shopping-cart .subtotal');
+const numberOfItemsElm = document.querySelector('.shopping-cart .numberOfItems');
+const taxElm = document.querySelector('.shopping-cart .tax');
+const totalElm = document.querySelector('.shopping-cart .total');
+
+
+
+*/
+
+
+
+
+
+function renderSubtotal() {    
+
+    let subTotalPrice = 0;
+    let tax = 0;    
+    let totalPrice = 0;    
+    let totalNumber = 0;
+
+    cart.forEach((pp_item)=>{
+        subTotalPrice += pp_item.price * pp_item.numberOfUnits
+
+        tax += pp_item.price * pp_item.numberOfUnits/10
+
+        totalPrice += ( pp_item.price * pp_item.numberOfUnits) + (pp_item.price * pp_item.numberOfUnits/10)
+
+        totalNumber += pp_item.numberOfUnits;
+
+    });
+
+    subTotalElm.innerHTML = `${subTotalPrice.toFixed(2)}`;
+
+    taxElm.innerHTML = `${tax.toFixed(2)}`;
+
+    totalElm.innerHTML = `${totalPrice.toFixed(2)}`;
+    
+    numberOfItemsElm.innerHTML = `${totalNumber}`;
+
+
+}
 
 
 
@@ -115,9 +164,7 @@ function changeNumberOfUnits(p_action, p_id) {
 
 
 
-
-
-// 🍀js41. remove item from cart
+// 🥨 products.js🍀js41. remove item from cart
 
 function removeItemFromCart(p_id) {
  
