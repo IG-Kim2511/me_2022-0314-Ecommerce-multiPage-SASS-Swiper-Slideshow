@@ -42,7 +42,7 @@ function renderCartItems() {
                     <button class="mybtn plus" onclick="changeNumberOfUnits('plus', ${pp_item.id})">+</button>           
                     <button class="mybtn minus" onclick="changeNumberOfUnits('minus', ${pp_item.id})">-</button>
                 </div>
-                <div class="price">$${pp_item.price} <span>$1000</span></div>
+                <div class="price">$${pp_item.price}</div>
             </div>
         </div>
     `        

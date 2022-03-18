@@ -481,10 +481,13 @@ section {
 
         position: relative;
 
+        
+
         img{
           height: 20rem;          
-          animation: fadeIn 0.2s linear;
+          padding: 3rem;
 
+          animation: fadeIn 0.2s linear;
         }
 
         .hover-img{

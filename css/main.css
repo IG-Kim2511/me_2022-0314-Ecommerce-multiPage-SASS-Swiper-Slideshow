@@ -447,6 +447,7 @@ section {
 
 .products .box-container .box .image img {
   height: 20rem;
+  padding: 3rem;
   -webkit-animation: fadeIn 0.2s linear;
           animation: fadeIn 0.2s linear;
 }
