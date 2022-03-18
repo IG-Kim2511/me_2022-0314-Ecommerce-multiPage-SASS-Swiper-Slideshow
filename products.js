@@ -68,6 +68,8 @@ function updateCart() {
     // js 45-10, js45-20
     localStorage.setItem('CART',cart);
     // localStorage.setItem('CART',JSON.stringify(cart));    
+
+    console.log(cart)
 }
 updateCart();
 
@@ -122,14 +124,13 @@ function renderProducts() {
 function addToCart(p_id) {
 
     // 🍉js13-30
-    if (dataProducts.some(pp_item => pp_item.id ===p_id)) {
+    if (cart.some((pp_item) => pp_item.id ===p_id)) {  //🍤bug
         
         changeNumberOfUnits('plus',p_id);
         
     // 🍉js13-20
     } else {
-        const item = dataProducts.find( pp_product => pp_product.id === p_id);  //🍤bug
-
+        const item = dataProducts.find( (pp_product) => pp_product.id === p_id);    
         console.log(item)
 
         // cart.push(item);
@@ -141,7 +142,7 @@ function addToCart(p_id) {
         )
         
     }
-    console.log(cart);
+    console.log(cart);  
 
     updateCart();
 }
@@ -230,3 +231,21 @@ function changeNumberOfUnits(p_action, p_id) {
 
 
 
+//🍀  localStorage.clear(); /  location.reload();    
+// 🥒js13-10,
+
+const deleteAllBtn = document.querySelector('.delete-all-btn');
+// const checkoutBtn = document.querySelector('.checkoutBtn');
+
+deleteAllBtn.addEventListener('click',()=>{
+    localStorage.clear();
+    location.reload();    
+});
+
+// checkoutBtn.addEventListener('click',()=>{
+//     localStorage.clear();
+//     location.reload();    
+   
+//     alert(`Thank you`);
+
+// });
