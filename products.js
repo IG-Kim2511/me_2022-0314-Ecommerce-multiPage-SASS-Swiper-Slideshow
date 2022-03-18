@@ -201,6 +201,37 @@ deleteAllBtn.addEventListener('click',()=>{
 
 
 
+// 🍀js 704. category
+const allElm= document.querySelector('.category .all');
+const menElm= document.querySelector('.category .men');
+const womenElm= document.querySelector('.category .women');
+const jewelryElm= document.querySelector('.category .jewelry');
+const electronicElm= document.querySelector('.category .electronic');
+
+console.log(electronicElm)
+
+function category(p_id) {
+ 
+    cart = cart.filter(pp_item => pp_item.id !==p_id);
+
+    updateCart_onCart();    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 🍀 js637.toastify
 
 const Toast = ()=> {
