@@ -3,10 +3,10 @@
 // variable
 const cartItemsEl = document.querySelector('.shopping-cart .box-container');
 
-const subtotalElm = document.querySelector('.shopping-cart .subtotal');
-const numberOfItemsElm = document.querySelector('.shopping-cart .numberOfItems');
+const subTotalElm = document.querySelector('.shopping-cart .subtotal');
 const taxElm = document.querySelector('.shopping-cart .tax');
 const totalElm = document.querySelector('.shopping-cart .total');
+const numberOfItemsElm = document.querySelector('.shopping-cart .numberOfItems');
 
 
 
@@ -124,12 +124,29 @@ const totalElm = document.querySelector('.shopping-cart .total');
 
 
 */
+
+
+
 function renderSubtotal(params) {
 
-    subtotalElm.innerHTML=`hi`;
-    numberOfItemsElm.innerHTML=`hi`;
-    taxElm.innerHTML=`hi`;
-    totalElm.innerHTML=`hi`;
+    
+    let subTotalPrice = 0;
+    let tax = 0;    
+    let totalPrice = 0;    
+    let totalNumber = 0;
+
+    cart.forEach((pp_item)=>{
+        subTotalPrice += pp_item.price * pp_item.numberOfUnits
+
+    });
+    subTotalElm.innerHTML = `${subTotalPrice.toFixed(2)}`;
+
+
+
+    // subtotalElm.innerHTML=`hi`;
+    // numberOfItemsElm.innerHTML=`hi`;
+    // taxElm.innerHTML=`hi`;
+    // totalElm.innerHTML=`hi`;
 
 
     
