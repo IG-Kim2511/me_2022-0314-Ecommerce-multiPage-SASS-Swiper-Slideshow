@@ -42,8 +42,6 @@ getFakeStore();
 
 
 
-
-
 //🍀js09. rendering Products
 /* 
    🦄설명:
@@ -98,6 +96,10 @@ let cart = JSON.parse(localStorage.getItem("CART")) || [];
 
 function addToCart(p_id) {
 
+
+    // 🥒 js637.toastify
+    Toast();
+
     console.log(cart)
 
     // 🍉js13-30
@@ -145,19 +147,6 @@ updateCart();
 
 
 
-
-    
-// 🍀js13-40. renderCartItems :  cart에 아이템 render
-
-
-
-
-
-
-
-
-
-
 // 🍀js28. + - 버튼 클릭한때, change Number Of Units, 
 /* 
    🦄설명:
@@ -197,59 +186,6 @@ function changeNumberOfUnits(p_action, p_id) {
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //🍀  localStorage.clear(); /  location.reload();    
 // 🥒js13-10,
 
@@ -261,10 +197,25 @@ deleteAllBtn.addEventListener('click',()=>{
     location.reload();    
 });
 
-// checkoutBtn.addEventListener('click',()=>{
-//     localStorage.clear();
-//     location.reload();    
-   
-//     alert(`Thank you`);
 
-// });
+
+
+
+// 🍀 js637.toastify
+
+const Toast = ()=> {
+    Toastify({
+        text: "added on cart",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+}
