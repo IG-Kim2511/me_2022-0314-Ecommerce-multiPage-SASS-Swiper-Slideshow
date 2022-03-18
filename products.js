@@ -71,7 +71,8 @@ https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
 const boxContainer = document.querySelector('.products .box-container');
         
 function renderProducts() {
-    dataProducts.forEach((p_product)=>{          
+    dataProducts.forEach((p_product)=>{   
+        
         boxContainer.innerHTML += `
             <div class="box">
                 <div class="image">
@@ -120,6 +121,7 @@ const electronicElm= document.querySelector('.category .electronic');
 
 // console.log(electronicElm)
 
+// 🥒
 menElm.addEventListener('click',()=>{
     category();
 });
