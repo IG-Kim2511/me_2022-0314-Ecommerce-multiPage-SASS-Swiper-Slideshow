@@ -127,9 +127,10 @@ const totalElm = document.querySelector('.shopping-cart .total');
 
 
 
-function renderSubtotal(params) {
 
-    
+
+function renderSubtotal() {    
+
     let subTotalPrice = 0;
     let tax = 0;    
     let totalPrice = 0;    
@@ -138,18 +139,23 @@ function renderSubtotal(params) {
     cart.forEach((pp_item)=>{
         subTotalPrice += pp_item.price * pp_item.numberOfUnits
 
+        tax += pp_item.price * pp_item.numberOfUnits/10
+
+        totalPrice += ( pp_item.price * pp_item.numberOfUnits) + (pp_item.price * pp_item.numberOfUnits/10)
+
+        totalNumber += pp_item.numberOfUnits;
+
     });
+
     subTotalElm.innerHTML = `${subTotalPrice.toFixed(2)}`;
 
+    taxElm.innerHTML = `${tax.toFixed(2)}`;
 
-
-    // subtotalElm.innerHTML=`hi`;
-    // numberOfItemsElm.innerHTML=`hi`;
-    // taxElm.innerHTML=`hi`;
-    // totalElm.innerHTML=`hi`;
-
-
+    totalElm.innerHTML = `${totalPrice.toFixed(2)}`;
     
+    numberOfItemsElm.innerHTML = `${totalNumber}`;
+
+
 }
 
 
