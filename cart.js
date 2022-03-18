@@ -1,6 +1,15 @@
 
-    
+
+// variable
 const cartItemsEl = document.querySelector('.shopping-cart .box-container');
+
+const subtotalElm = document.querySelector('.shopping-cart .subtotal');
+const numberOfItemsElm = document.querySelector('.shopping-cart .numberOfItems');
+const taxElm = document.querySelector('.shopping-cart .tax');
+const totalElm = document.querySelector('.shopping-cart .total');
+
+
+
 
 // 🦄multi page : 저장된 localstorage data활용하기 - cart.js
 
@@ -105,8 +114,24 @@ function changeNumberOfUnits(p_action, p_id) {
 
 //🥨 products.js 🍀js35. calculate, renderSubtotal 
 
+/* 
+
+const subtotalElm = document.querySelector('.shopping-cart .subtotal');
+const numberOfItemsElm = document.querySelector('.shopping-cart .numberOfItems');
+const taxElm = document.querySelector('.shopping-cart .tax');
+const totalElm = document.querySelector('.shopping-cart .total');
+
+
+
+*/
 function renderSubtotal(params) {
-    
+
+    subtotalElm.innerHTML=`hi`;
+    numberOfItemsElm.innerHTML=`hi`;
+    taxElm.innerHTML=`hi`;
+    totalElm.innerHTML=`hi`;
+
+
     
 }
 
