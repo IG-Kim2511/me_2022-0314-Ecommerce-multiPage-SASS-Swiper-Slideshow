@@ -66,7 +66,7 @@
     </header>
 
 
-        
+
     <section>
         <button class="delete-all-btn btn">clear localstorage</button>
     </section>
@@ -99,7 +99,7 @@
                 <!-- <img src="images/cat_img4.png" alt=""> -->
                 <h3>jewelry</h3>
             </a>
-      
+
 
             <a href="#" class="box">
                 <!-- <img src="images/cat_img7.png" alt=""> -->
@@ -110,17 +110,43 @@
 
 
     <!-- products -->
-    
+
     <section class="products">
 
         <!-- 🥒js518-10. -->
         <h1 class="heading"> <span>Loading...Fetching API</span> </h1>
 
-        <!-- 🥒js0237. rendering-->
+        <!-- 🥒js09. rendering-->
         <div class="box-container">
 
-            
-            
+            <!-- 
+                <div class="box">
+                    <div class="image">
+                        <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
+                        <div class="icons">
+                            <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>${p_product.title}</h3>
+                        <div class="price">$${p_product.price}</div>
+                        
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="price">inventory: ${p_product.inStock}</div>
+                        <button class="btn" onclick="addToCart(${p_product.id})">add to cart</button>
+                    </div>
+                </div>
+             -->
+
+
+
         </div>
     </section>
 

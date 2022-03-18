@@ -8,10 +8,6 @@ const url = `https://fakestoreapi.com/products/`;
 let dataProducts =[];
 console.log(dataProducts)
 
-// cart 
-// let cart =[];
-let cart = JSON.parse(localStorage.getItem("CART")) || [];
-
 
 // Fetching data
 function getFakeStore() {
@@ -36,7 +32,7 @@ function getFakeStore() {
                 });
         });
 
-        // 🥒js315. 
+        // 🥒js09. 
         // 🦄 실행 코드는 fetch 함수안에 넣어야 에러없이 작동함. 밖에 있으면 fetch data되기전에 그 함수가 실행되서 rendering이 안됨
 
         renderProducts();
@@ -45,27 +41,10 @@ function getFakeStore() {
 getFakeStore();
 
 
-// 🍀js13-40.update Cart
-// 🍀js45. localStorage. save cart to local  storage
-/* 
-   🦄설명:
-   https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
-*/
-
-function updateCart() {
-    // renderCartItems();
-    // renderSubtotal();
-
-    // js 45-10, js45-20
-    // localStorage.setItem('CART',cart);
-    localStorage.setItem('CART',JSON.stringify(cart));    
-
-    console.log(cart)
-}
-updateCart();
 
 
-//🍀js315. rendering Products
+
+//🍀js09. rendering Products
 /* 
    🦄설명:
 https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
@@ -107,16 +86,19 @@ function renderProducts() {
 
 // 🍀js13. addToCart, 새로운 항목 numberOfUnit...object에 추가하기
 
+//🥒 cart 
+// let cart =[];
+// 🥒js45-30,-40,-50,-60, localStorage
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+
 /* 
    🦄설명:
     https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
 */
 
-console.log(cart)
 function addToCart(p_id) {
 
     console.log(cart)
-    console.log(p_id)
 
     // 🍉js13-30
     if (cart.some((pp_item) => pp_item.id === p_id)) {  
@@ -142,7 +124,24 @@ function addToCart(p_id) {
 
 
 
+// 🍀js13-40.update Cart
+// 🍀js45. localStorage. save cart to local  storage
+/* 
+   🦄설명:
+   https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
+*/
 
+function updateCart() {
+    // renderCartItems();
+    // renderSubtotal();
+
+    // js 45-10, js45-20
+    // localStorage.setItem('CART',cart);
+    localStorage.setItem('CART',JSON.stringify(cart));    
+
+    console.log(cart)
+}
+updateCart();
 
 
 
@@ -195,6 +194,52 @@ function changeNumberOfUnits(p_action, p_id) {
 }
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
