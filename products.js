@@ -106,13 +106,11 @@ function renderProducts() {
 // 🍀 js704. category.....................🍚
 
 /* 
-category
-"jewelery"
-"men's clothing"
-"electronics"
-"women's clothing"
-
-
+    category
+    "jewelery"
+    "men's clothing"
+    "electronics"
+    "women's clothing"
 */
 const allElm= document.querySelector('.category .all');
 const menElm= document.querySelector('.category .men');
@@ -122,18 +120,41 @@ const electronicElm= document.querySelector('.category .electronic');
 
 // console.log(electronicElm)
 
-// menElm.addEventListener('click',()=>{
-//     // dataProducts.filter(pp_item =>pp_item.title ===);
-// });
+menElm.addEventListener('click',()=>{
+    category();
+});
 
-// console.log(dataProducts)
+function category(p_id) {
+    boxContainer.innerHTML = ``;
+    dataProductsMen.forEach((p_product)=>{          
+        boxContainer.innerHTML += `
+            <div class="box">
+                <div class="image">
+                    <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
+                    <div class="icons">
+                        <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>${p_product.title}</h3>
+                    <div class="price">$${p_product.price}</div>
+                    
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">inventory: ${p_product.inStock}</div>
+                    <button class="btn" onclick="addToCart(${p_product.id})">add to cart</button>
+                </div>
+            </div>
+        `  
+    });  
 
-// function category(p_id) {
-//    dataProducts= dataProducts.filter(pp_item => pp_item.category ==="men's clothing");
-
-//     console.log(dataProducts)    
-
-// }
+}
 
 
 
