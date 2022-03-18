@@ -49,6 +49,12 @@ function renderCartItems() {
     });
 }
 
+
+
+
+// 🍀js13-40.update Cart  
+// 🥨 products.js에 같은 코드 있음
+
 function updateCart_onCart() {
     renderCartItems();
     // renderSubtotal();
@@ -57,8 +63,37 @@ function updateCart_onCart() {
 }
 updateCart_onCart();
 
-function changeNumberOfUnits(params) {
-    
+
+
+// 🍀js28.  
+// 🥨 products.js에 같은 코드 있음
+
+function changeNumberOfUnits(p_action, p_id) {
+
+    cart = cart.map((p_item)=>{
+        let numberOfUnits = p_item.numberOfUnits;
+
+        if (p_item.id === p_id) {
+
+            if (p_action ===  "minus" && numberOfUnits > 1) {
+
+                numberOfUnits--;
+                
+            } else if (p_action ===  "plus" && numberOfUnits <  p_item.inStock) {
+
+                numberOfUnits++;
+                
+            }else if(p_action ==="plus" && numberOfUnits ===p_item.inStock){
+                alert(`sorry. it's out of stock.`);                
+            }            
+        }
+
+        return{
+            ...p_item,
+
+            numberOfUnits:numberOfUnits,
+        }
+
+    })
+    updateCart_onCart();
 }
-
-
