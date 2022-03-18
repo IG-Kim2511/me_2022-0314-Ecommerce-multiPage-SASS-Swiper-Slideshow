@@ -148,7 +148,13 @@ updateCart();
 
     
 // 🍀js13-40. renderCartItems :  cart에 아이템 render
+// function renderCartItems() {
+    
 
+//     cart.forEach((pp_item)=>{
+
+//     });
+// }
 
 
 
