@@ -49,7 +49,7 @@ getFakeStore();
 // 🍀js45. localStorage. save cart to local  storage
 /* 
    🦄설명:
-   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
+   https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
 */
 
 function updateCart() {
@@ -68,7 +68,7 @@ updateCart();
 //🍀js315. rendering Products
 /* 
    🦄설명:
-   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
+https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
 */
 
 const boxContainer = document.querySelector('.products .box-container');
@@ -109,7 +109,7 @@ function renderProducts() {
 
 /* 
    🦄설명:
-   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
+    https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
 */
 
 console.log(cart)
@@ -160,7 +160,7 @@ function addToCart(p_id) {
 // 🍀js28. + - 버튼 클릭한때, change Number Of Units, 
 /* 
    🦄설명:
-   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
+ https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
 */
 
 
