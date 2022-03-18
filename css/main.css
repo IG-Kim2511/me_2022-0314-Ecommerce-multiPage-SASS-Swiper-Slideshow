@@ -525,7 +525,9 @@ section {
 }
 
 .shopping-cart .box-container .box img {
-  height: 12rem;
+  float: left;
+  width: 10rem;
+  height: 10rem;
 }
 
 .shopping-cart .box-container .box .content h3 {
@@ -567,6 +569,37 @@ section {
   font-size: 1.5rem;
   color: #666;
   text-decoration: line-through;
+}
+
+.shopping-cart .box-container .box .units {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.shopping-cart .box-container .box .units .number {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.shopping-cart .box-container .box .units .mybtn {
+  font-size: 1.2rem;
+  border-radius: 50%;
+  border: #000 1px solid;
+  padding: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.shopping-cart .box-container .box .units .mybtn:hover {
+  background: gold;
+  color: #fff;
 }
 
 .shopping-cart .cart-total {

@@ -571,7 +571,11 @@ section {
       }
 
       img{
-        height: 12rem;
+        
+        float: left;
+        width:  10rem;
+        height: 10rem;
+        
       }
 
       .content{
@@ -610,6 +614,35 @@ section {
             font-size: 1.5rem;
             color:$light-color;
             text-decoration: line-through;
+          }
+        }
+      }
+
+      .units{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .number{
+          padding: 1rem;
+          font-size: 1.5rem;        
+          
+        }
+
+        .mybtn{
+
+          font-size: 1.2rem;
+
+          border-radius: 50%;
+          border: #000 1px solid;
+          padding: 1rem;
+          margin: 0.5rem;
+      
+          cursor: pointer;
+
+          &:hover{
+            background:$gold;
+            color:#fff;
           }
         }
       }
