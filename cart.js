@@ -6,9 +6,7 @@ const cartItemsEl = document.querySelector('.shopping-cart .box-container');
 
 
 
-
-// 🥨 products.js에 같은 코드 있음
-//🥒 cart 
+//🥨 products.js  - 🥒 cart 
 // let cart =[];
 // 🥒js45-30,-40,-50,-60, localStorage
 let cart = JSON.parse(localStorage.getItem("CART")) || [];
@@ -56,8 +54,7 @@ function renderCartItems() {
 
 
 
-// 🍀js13-40.update Cart  
-// 🥨 products.js에 같은 코드 있음
+// 🥨 products.js  - 🍀js13-40.update Cart  
 
 function updateCart_onCart() {
     renderCartItems();
@@ -73,8 +70,7 @@ updateCart_onCart();
 
 
 
-// 🍀js28.  
-// 🥨 products.js에 같은 코드 있음
+// 🥨 products.js  - 🍀js28.  
 
 function changeNumberOfUnits(p_action, p_id) {
 
@@ -107,7 +103,7 @@ function changeNumberOfUnits(p_action, p_id) {
 }
 
 
-//🦄 🍀js35. calculate, renderSubtotal 
+//🥨 products.js 🍀js35. calculate, renderSubtotal 
 
 
 
@@ -117,7 +113,7 @@ function changeNumberOfUnits(p_action, p_id) {
 
 
 
-// 🍀js41. remove item from cart
+// 🥨 products.js🍀js41. remove item from cart
 
 function removeItemFromCart(p_id) {
  
