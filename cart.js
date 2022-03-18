@@ -38,9 +38,9 @@ function renderCartItems() {
                 <h3>${pp_item.title.substring(0, 15)}..</h3>
           
                 <div class="units">
-                    <div class="mybtn plus" onclick="changeNumberOfUnits('plus', ${pp_item.id})">+</div>           
-                    <div class="number">${pp_item.numberOfUnits}</div>
-                    <div class="mybtn minus" onclick="changeNumberOfUnits('minus', ${pp_item.id})">-</div>
+                <div class="number"> QTY : ${pp_item.numberOfUnits}</div>
+                    <button class="mybtn plus" onclick="changeNumberOfUnits('plus', ${pp_item.id})">+</button>           
+                    <button class="mybtn minus" onclick="changeNumberOfUnits('minus', ${pp_item.id})">-</button>
                 </div>
                 <div class="price">$${pp_item.price} <span>$1000</span></div>
             </div>
