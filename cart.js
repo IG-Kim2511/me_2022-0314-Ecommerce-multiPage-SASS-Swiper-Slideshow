@@ -58,7 +58,7 @@ function renderCartItems() {
 
 function updateCart_onCart() {
     renderCartItems();
-    // renderSubtotal();
+    renderSubtotal();
 
     console.log(cart)
 
@@ -105,7 +105,10 @@ function changeNumberOfUnits(p_action, p_id) {
 
 //🥨 products.js 🍀js35. calculate, renderSubtotal 
 
-
+function renderSubtotal(params) {
+    
+    
+}
 
 
 
