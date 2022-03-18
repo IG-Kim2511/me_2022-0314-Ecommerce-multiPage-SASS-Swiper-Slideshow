@@ -6,13 +6,11 @@ const url = `https://fakestoreapi.com/products/`;
 // 🥒js417, fetched dataProducts + inStock, numberOfUnit, ...object에 추가  
 //🥒 addToCart
 let dataProducts =[];
-console.log(dataProducts);
-
-
+console.log(dataProducts)
 
 // cart 
-let cart =[];
-// let cart = JSON.parse(localStorage.getItem("CART")) || [];
+// let cart =[];
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
 
 
 // Fetching data
@@ -29,21 +27,14 @@ function getFakeStore() {
         */
         document.querySelector('.products .heading').innerHTML =`products `;        
       
-        console.log(a_datas);
-
-        /*🍉 ~~~coding~~~ */
-
-
         // 🍀js417. fetched datas에 inStock 넣기
         a_datas.forEach((p_data)=>{
-
             dataProducts.push(
                 {
                     ...p_data,
                     inStock:10,                    
                 });
         });
-
 
         // 🥒js315. 
         // 🦄 실행 코드는 fetch 함수안에 넣어야 에러없이 작동함. 밖에 있으면 fetch data되기전에 그 함수가 실행되서 rendering이 안됨
@@ -66,8 +57,8 @@ function updateCart() {
     // renderSubtotal();
 
     // js 45-10, js45-20
-    localStorage.setItem('CART',cart);
-    // localStorage.setItem('CART',JSON.stringify(cart));    
+    // localStorage.setItem('CART',cart);
+    localStorage.setItem('CART',JSON.stringify(cart));    
 
     console.log(cart)
 }
@@ -121,10 +112,14 @@ function renderProducts() {
    https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
 */
 
+console.log(cart)
 function addToCart(p_id) {
 
+    console.log(cart)
+    console.log(p_id)
+
     // 🍉js13-30
-    if (cart.some((pp_item) => pp_item.id ===p_id)) {  //🍤bug
+    if (cart.some((pp_item) => pp_item.id === p_id)) {  
         
         changeNumberOfUnits('plus',p_id);
         
@@ -139,11 +134,9 @@ function addToCart(p_id) {
                 ...item,
                 numberOfUnits : 1,
             }
-        )
-        
+        )        
     }
-    console.log(cart);  
-
+    
     updateCart();
 }
 
@@ -171,32 +164,6 @@ function addToCart(p_id) {
 */
 
 
-// function changeNumberOfUnits(action, id) {
-//     cart = cart.map((item) => {
-//       let numberOfUnits = item.numberOfUnits;
-  
-//       if (item.id === id) {
-//         if (action === "minus" && numberOfUnits > 1) {
-//           numberOfUnits--;
-//         } else if (action === "plus" && numberOfUnits < item.instock) {
-//           numberOfUnits++;          
-//         }         
-//         else if (action === "plus" && numberOfUnits === item.instock) {
-//             alert('out of stock');            
-//           }  
-//       }
-  
-//       return {
-//         ...item,
-  
-//         numberOfUnits: numberOfUnits, /* 🥒js3510. */
-//       //   numberOfUnits,
-//       };
-//     });
-  
-//     updateCart();
-//   }
-
 function changeNumberOfUnits(p_action, p_id) {
 
     cart = cart.map((p_item)=>{
@@ -208,19 +175,23 @@ function changeNumberOfUnits(p_action, p_id) {
 
                 numberOfUnits--;
                 
-            } else if (p_action ===  "minus" && numberOfUnits <  p_item.inStock) {
+            } else if (p_action ===  "plus" && numberOfUnits <  p_item.inStock) {
 
                 numberOfUnits++;
                 
             }else if(p_action ==="plus" && numberOfUnits ===p_item.inStock){
-                alert(`sorry. it's out of stock.`);
-                
-            }
-            
+                alert(`sorry. it's out of stock.`);                
+            }            
+        }
+
+        return{
+            ...p_item,
+
+            numberOfUnits:numberOfUnits,
         }
 
     })
-    
+    updateCart();
 }
 
   
