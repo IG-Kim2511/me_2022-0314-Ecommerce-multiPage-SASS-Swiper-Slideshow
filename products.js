@@ -3,13 +3,17 @@
 
 const url = `https://fakestoreapi.com/products/`;
 
-// 🥒js417, inStock, numberOfUnit, ...object에 추가  
+// 🥒js417, fetched dataProducts + inStock, numberOfUnit, ...object에 추가  
 //🥒 addToCart
-let cart =[];
+let dataProducts =[];
+console.log(dataProducts)
 
-// let cart = JSON.parse(localStorage.getItem("CART")) || [];
+// cart 
+// let cart =[];
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
 
 
+// Fetching data
 function getFakeStore() {
     fetch(url)
     .then((res) => res.json())
@@ -21,26 +25,16 @@ function getFakeStore() {
         
          20. fetch 완료하면, innerHTML로 새로운 텍스트 넣음
         */
-        document.querySelector('.products .heading').innerHTML =`products `;
-        
+        document.querySelector('.products .heading').innerHTML =`products `;        
       
-        console.log(a_datas);
-
-        /*🍉 ~~~coding~~~ */
-
-
         // 🍀js417. fetched datas에 inStock 넣기
         a_datas.forEach((p_data)=>{
-
-            cart.push(
+            dataProducts.push(
                 {
                     ...p_data,
                     inStock:10,                    
                 });
         });
-
-        console.log(cart);
-
 
         // 🥒js315. 
         // 🦄 실행 코드는 fetch 함수안에 넣어야 에러없이 작동함. 밖에 있으면 fetch data되기전에 그 함수가 실행되서 rendering이 안됨
@@ -51,21 +45,40 @@ function getFakeStore() {
 getFakeStore();
 
 
-//🍀js315. rendering Products
-
+// 🍀js13-40.update Cart
+// 🍀js45. localStorage. save cart to local  storage
 /* 
-  🦄onClick 사용  - 🥒js13, addToCart
-    JS로 rendering한 element에 variable할 수 없을 때..
-    rendering할때, onClick 넣으면 간단함!!    
+   🦄설명:
+   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
 */
+
+function updateCart() {
+    // renderCartItems();
+    // renderSubtotal();
+
+    // js 45-10, js45-20
+    // localStorage.setItem('CART',cart);
+    localStorage.setItem('CART',JSON.stringify(cart));    
+
+    console.log(cart)
+}
+updateCart();
+
+
+//🍀js315. rendering Products
+/* 
+   🦄설명:
+   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
+*/
+
 const boxContainer = document.querySelector('.products .box-container');
         
 function renderProducts() {
-    cart.forEach((p_product)=>{          
+    dataProducts.forEach((p_product)=>{          
         boxContainer.innerHTML += `
             <div class="box">
                 <div class="image">
-                    <img src="${p_product.image}"  class="main-img" alt="">                    
+                    <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
                     <div class="icons">
                         <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
                         <a href="#" class="fas fa-heart"></a>
@@ -83,7 +96,7 @@ function renderProducts() {
                         <i class="fas fa-star-half-alt"></i>
                     </div>
                     <div class="price">inventory: ${p_product.inStock}</div>
-                    <a class="btn" onclick="addToCart(${p_product.id})">add to cart</a>
+                    <button class="btn" onclick="addToCart(${p_product.id})">add to cart</button>
                 </div>
             </div>
         `  
@@ -92,18 +105,40 @@ function renderProducts() {
 
 
 
-
-//🍀 js0237. rendering data products
+// 🍀js13. addToCart, 새로운 항목 numberOfUnit...object에 추가하기
 
 /* 
-  dataProducts  : products.js 에서 가져온 variable
-    innerHTML += 사용
-  
-  🦄onClick 사용  - 🥒js13, addToCart
-    JS로 rendering한 element에 variable할 수 없을 때..
-    rendering할때, onClick 넣으면 간단함!!    
+   🦄설명:
+   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
 */
-            
+
+console.log(cart)
+function addToCart(p_id) {
+
+    console.log(cart)
+    console.log(p_id)
+
+    // 🍉js13-30
+    if (cart.some((pp_item) => pp_item.id === p_id)) {  
+        
+        changeNumberOfUnits('plus',p_id);
+        
+    // 🍉js13-20
+    } else {
+        const item = dataProducts.find( (pp_product) => pp_product.id === p_id);    
+        console.log(item)
+
+        // cart.push(item);
+        cart.push(
+            {
+                ...item,
+                numberOfUnits : 1,
+            }
+        )        
+    }
+    
+    updateCart();
+}
 
 
 
@@ -113,3 +148,75 @@ function renderProducts() {
 
 
 
+
+
+
+
+
+
+
+
+
+// 🍀js28. + - 버튼 클릭한때, change Number Of Units, 
+/* 
+   🦄설명:
+   https://github.com/IG-Kim2511/me_2021-1230-Ecommerce_Shoes-Slideshow-JS
+*/
+
+
+function changeNumberOfUnits(p_action, p_id) {
+
+    cart = cart.map((p_item)=>{
+        let numberOfUnits = p_item.numberOfUnits;
+
+        if (p_item.id === p_id) {
+
+            if (p_action ===  "minus" && numberOfUnits > 1) {
+
+                numberOfUnits--;
+                
+            } else if (p_action ===  "plus" && numberOfUnits <  p_item.inStock) {
+
+                numberOfUnits++;
+                
+            }else if(p_action ==="plus" && numberOfUnits ===p_item.inStock){
+                alert(`sorry. it's out of stock.`);                
+            }            
+        }
+
+        return{
+            ...p_item,
+
+            numberOfUnits:numberOfUnits,
+        }
+
+    })
+    updateCart();
+}
+
+  
+
+
+
+
+
+
+
+//🍀  localStorage.clear(); /  location.reload();    
+// 🥒js13-10,
+
+const deleteAllBtn = document.querySelector('.delete-all-btn');
+// const checkoutBtn = document.querySelector('.checkoutBtn');
+
+deleteAllBtn.addEventListener('click',()=>{
+    localStorage.clear();
+    location.reload();    
+});
+
+// checkoutBtn.addEventListener('click',()=>{
+//     localStorage.clear();
+//     location.reload();    
+   
+//     alert(`Thank you`);
+
+// });
