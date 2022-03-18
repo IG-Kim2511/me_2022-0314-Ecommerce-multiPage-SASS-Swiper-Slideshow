@@ -3,8 +3,6 @@
 🍚
 products page : category 
 
-cart page : calculate 
-
 */
 
 
