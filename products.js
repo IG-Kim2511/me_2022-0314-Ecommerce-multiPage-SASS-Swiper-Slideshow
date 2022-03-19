@@ -9,6 +9,11 @@ let dataProducts =[];
 console.log(dataProducts)
 
 
+// 🥒 js704. category
+let dataProductsMen =[];
+console.log(dataProductsMen)
+
+
 // Fetching data
 function getFakeStore() {
     fetch(url)
@@ -23,7 +28,7 @@ function getFakeStore() {
         */
         document.querySelector('.products .heading').innerHTML =`products `;        
       
-        // 🍀js417. fetched datas에 inStock 넣기
+        // 🍀 js417. fetched datas에 inStock 넣기
         a_datas.forEach((p_data)=>{
             dataProducts.push(
                 {
@@ -31,6 +36,21 @@ function getFakeStore() {
                     inStock:10,                    
                 });
         });
+
+
+        // 🥒 js704. category
+        a_datas.forEach((p_data) => {
+            if (p_data.category === "men's clothing") {
+                
+                dataProductsMen.push(
+                    {
+                        ...p_data,
+                        inStock:10,                    
+                    });
+            }
+        });
+
+
 
         // 🥒js09. 
         // 🦄 실행 코드는 fetch 함수안에 넣어야 에러없이 작동함. 밖에 있으면 fetch data되기전에 그 함수가 실행되서 rendering이 안됨
@@ -51,7 +71,8 @@ https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
 const boxContainer = document.querySelector('.products .box-container');
         
 function renderProducts() {
-    dataProducts.forEach((p_product)=>{          
+    dataProducts.forEach((p_product)=>{   
+        
         boxContainer.innerHTML += `
             <div class="box">
                 <div class="image">
@@ -79,6 +100,67 @@ function renderProducts() {
         `  
     });  
 }
+
+
+
+
+// 🍀 js704. category.....................🍚
+
+/* 
+    category
+    "jewelery"
+    "men's clothing"
+    "electronics"
+    "women's clothing"
+*/
+const allElm= document.querySelector('.category .all');
+const menElm= document.querySelector('.category .men');
+const womenElm= document.querySelector('.category .women');
+const jewelryElm= document.querySelector('.category .jewelry');
+const electronicElm= document.querySelector('.category .electronic');
+
+// console.log(electronicElm)
+
+// 🥒
+menElm.addEventListener('click',()=>{
+    category();
+});
+
+function category(p_id) {
+    boxContainer.innerHTML = ``;
+    dataProductsMen.forEach((p_product)=>{          
+        boxContainer.innerHTML += `
+            <div class="box">
+                <div class="image">
+                    <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
+                    <div class="icons">
+                        <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>${p_product.title}</h3>
+                    <div class="price">$${p_product.price}</div>
+                    
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">inventory: ${p_product.inStock}</div>
+                    <button class="btn" onclick="addToCart(${p_product.id})">add to cart</button>
+                </div>
+            </div>
+        `  
+    });  
+
+}
+
+
+
+
 
 
 
@@ -196,6 +278,20 @@ deleteAllBtn.addEventListener('click',()=>{
     localStorage.clear();
     location.reload();    
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

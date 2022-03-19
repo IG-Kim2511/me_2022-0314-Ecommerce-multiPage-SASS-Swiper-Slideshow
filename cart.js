@@ -159,12 +159,7 @@ function renderSubtotal() {
 }
 
 
-
-
-
-
-
-// 🥨 products.js🍀js41. remove item from cart
+// 🍀js41. remove item from cart
 
 function removeItemFromCart(p_id) {
  
