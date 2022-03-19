@@ -1,3 +1,33 @@
+// 🍀variable
+
+//🥒 js13. cart 
+// let cart =[];
+// 🥒js45-30,-40,-50,-60, localStorage
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+
+
+
+// 🍀 js637.toastify
+
+const Toast = ()=> {
+    Toastify({
+        text: "added on cart",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+}
+
+
+
 
 // 🍀js0211. fetch
 
@@ -166,11 +196,6 @@ function category(p_id) {
 
 // 🍀js13. addToCart, 새로운 항목 numberOfUnit...object에 추가하기
 
-//🥒 cart 
-// let cart =[];
-// 🥒js45-30,-40,-50,-60, localStorage
-let cart = JSON.parse(localStorage.getItem("CART")) || [];
-
 /* 
    🦄설명:
     https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
@@ -296,22 +321,3 @@ deleteAllBtn.addEventListener('click',()=>{
 
 
 
-
-// 🍀 js637.toastify
-
-const Toast = ()=> {
-    Toastify({
-        text: "added on cart",
-        duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "left", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
-        },
-        onClick: function(){} // Callback after click
-      }).showToast();
-}
