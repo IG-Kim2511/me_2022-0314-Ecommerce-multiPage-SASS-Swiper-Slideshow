@@ -115,14 +115,9 @@ function renderProducts() {
                 <div class="content">
                     <h3>${p_product.title}</h3>
                     <div class="price">$${p_product.price}</div>
+     
+                    <div>rating ⭐ ${p_product.rating.rate}</div>
                     
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                     <div class="price">inventory: ${p_product.inStock}</div>
                     <button class="btn" onclick="addToCart(${p_product.id})">add to cart</button>
                 </div>
@@ -152,41 +147,41 @@ const electronicElm= document.querySelector('.category .electronic');
 // console.log(electronicElm)
 
 // 🥒
-menElm.addEventListener('click',()=>{
-    category();
-});
+// menElm.addEventListener('click',()=>{
+//     category();
+// });
 
-function category(p_id) {
-    boxContainer.innerHTML = ``;
-    dataProductsMen.forEach((p_product)=>{          
-        boxContainer.innerHTML += `
-            <div class="box">
-                <div class="image">
-                    <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
-                    <div class="icons">
-                        <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
-                        <a href="#" class="fas fa-heart"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>${p_product.title}</h3>
-                    <div class="price">$${p_product.price}</div>
+// function category(p_id) {
+//     boxContainer.innerHTML = ``;
+//     dataProductsMen.forEach((p_product)=>{          
+//         boxContainer.innerHTML += `
+//             <div class="box">
+//                 <div class="image">
+//                     <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
+//                     <div class="icons">
+//                         <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
+//                         <a href="#" class="fas fa-heart"></a>
+//                     </div>
+//                 </div>
+//                 <div class="content">
+//                     <h3>${p_product.title}</h3>
+//                     <div class="price">$${p_product.price}</div>
                     
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <div class="price">inventory: ${p_product.inStock}</div>
-                    <button class="btn" onclick="addToCart(${p_product.id})">add to cart</button>
-                </div>
-            </div>
-        `  
-    });  
+//                     <div class="stars">
+//                         <i class="fas fa-star"></i>
+//                         <i class="fas fa-star"></i>
+//                         <i class="fas fa-star"></i>
+//                         <i class="fas fa-star"></i>
+//                         <i class="fas fa-star-half-alt"></i>
+//                     </div>
+//                     <div class="price">inventory: ${p_product.inStock}</div>
+//                     <button class="btn" onclick="addToCart(${p_product.id})">add to cart</button>
+//                 </div>
+//             </div>
+//         `  
+//     });  
 
-}
+// }
 
 
 
