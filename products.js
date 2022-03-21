@@ -13,7 +13,7 @@ const Toast = ()=> {
     Toastify({
         text: "added on cart",
         duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
+        destination: "./cart.html",
         newWindow: true,
         close: true,
         gravity: "top", // `top` or `bottom`
@@ -41,6 +41,9 @@ console.log(dataProducts)
 
 // 🥒 js704. category
 let dataProductsMen =[];
+let dataProductsWomen =[];
+let dataProductsJ =[];
+let dataProductsE =[];
 console.log(dataProductsMen)
 
 
@@ -80,6 +83,39 @@ function getFakeStore() {
             }
         });
 
+        a_datas.forEach((p_data) => {
+            if (p_data.category === "women's clothing") {
+                
+                dataProductsWomen.push(
+                    {
+                        ...p_data,
+                        inStock:10,                    
+                    });
+            }
+        });
+
+        a_datas.forEach((p_data) => {
+            if (p_data.category === "jewelery") {
+                
+                dataProductsJ.push(
+                    {
+                        ...p_data,
+                        inStock:10,                    
+                    });
+            }
+        });
+
+        a_datas.forEach((p_data) => {
+            if (p_data.category === "electronics") {
+                
+                dataProductsE.push(
+                    {
+                        ...p_data,
+                        inStock:10,                    
+                    });
+            }
+        });
+
 
 
         // 🥒js09. 
@@ -101,15 +137,20 @@ https://github.com/IG-Kim2511/me_2021-1109-cloth-Shopping_Cart-ig-js
 const boxContainer = document.querySelector('.products .box-container');
         
 function renderProducts() {
-    dataProducts.forEach((p_product)=>{   
-        
+    renderProducts_inside(dataProducts);
+
+}
+
+function renderProducts_inside(p) {
+    boxContainer.innerHTML = ``;
+    p.forEach((p_product)=>{          
         boxContainer.innerHTML += `
             <div class="box">
                 <div class="image">
                     <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
                     <div class="icons">
                         <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
-                        <a href="#" class="fas fa-heart"></a>
+                        
                     </div>
                 </div>
                 <div class="content">
@@ -131,6 +172,16 @@ function renderProducts() {
 
 // 🍀 js704. category.....................🍚
 
+/* 🍚filter + 해당 category아닌걸로 코드짜면 되는데, 여기서는 fetched data써서인지 안됨... */
+
+/* 🍚
+    10. 해당 category별로 data array만듬
+
+    20. renderProducts_inside 를 통해서 그 data array 보냄
+
+    30. 끝
+*/
+
 /* 
     category
     "jewelery"
@@ -147,41 +198,25 @@ const electronicElm= document.querySelector('.category .electronic');
 // console.log(electronicElm)
 
 // 🥒
-// menElm.addEventListener('click',()=>{
-//     category();
-// });
+allElm.addEventListener('click',()=>{
+    renderProducts_inside(dataProducts);
+});
 
-// function category(p_id) {
-//     boxContainer.innerHTML = ``;
-//     dataProductsMen.forEach((p_product)=>{          
-//         boxContainer.innerHTML += `
-//             <div class="box">
-//                 <div class="image">
-//                     <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
-//                     <div class="icons">
-//                         <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
-//                         <a href="#" class="fas fa-heart"></a>
-//                     </div>
-//                 </div>
-//                 <div class="content">
-//                     <h3>${p_product.title}</h3>
-//                     <div class="price">$${p_product.price}</div>
-                    
-//                     <div class="stars">
-//                         <i class="fas fa-star"></i>
-//                         <i class="fas fa-star"></i>
-//                         <i class="fas fa-star"></i>
-//                         <i class="fas fa-star"></i>
-//                         <i class="fas fa-star-half-alt"></i>
-//                     </div>
-//                     <div class="price">inventory: ${p_product.inStock}</div>
-//                     <button class="btn" onclick="addToCart(${p_product.id})">add to cart</button>
-//                 </div>
-//             </div>
-//         `  
-//     });  
+menElm.addEventListener('click',()=>{    
+    renderProducts_inside(dataProductsMen);
+});
 
-// }
+womenElm.addEventListener('click',()=>{    
+    renderProducts_inside(dataProductsWomen);
+});
+
+jewelryElm.addEventListener('click',()=>{    
+    renderProducts_inside(dataProductsJ);
+});
+
+electronicElm.addEventListener('click',()=>{    
+    renderProducts_inside(dataProductsE);
+});
 
 
 

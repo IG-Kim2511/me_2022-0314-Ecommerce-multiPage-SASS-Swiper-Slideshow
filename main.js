@@ -1,7 +1,6 @@
 
 /* 
 🍚
-products page : category 
 
 selecting featured images, 
 
