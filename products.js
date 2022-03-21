@@ -149,7 +149,7 @@ function renderProducts_inside(p) {
                 <div class="image">
                     <img src="${p_product.image}"  class="main-img" alt="${p_product.title}">                    
                     <div class="icons">
-                        <a href="#" class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
+                        <a class="fas fa-shopping-cart" onclick="addToCart(${p_product.id})"></a>
                         
                     </div>
                 </div>
