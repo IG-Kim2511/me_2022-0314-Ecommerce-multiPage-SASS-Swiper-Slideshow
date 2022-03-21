@@ -13,7 +13,7 @@ const Toast = ()=> {
     Toastify({
         text: "added on cart",
         duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
+        destination: "./cart.html",
         newWindow: true,
         close: true,
         gravity: "top", // `top` or `bottom`
