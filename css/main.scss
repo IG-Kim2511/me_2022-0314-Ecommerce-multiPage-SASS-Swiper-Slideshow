@@ -134,6 +134,25 @@ section {
     }
   }
 
+      // navbar-top
+      .navbar-top {
+        padding-top: 1rem;
+  
+        display: flex;
+    
+        a {
+          display: block;
+          padding: 1rem;
+          font-size: 1.7rem;
+          color: $light-bg;
+    
+          &:hover {
+            color: $blue;  
+          }  
+     
+        }
+      }
+
   .search-form {
     height: 5rem;
     width: 50rem;
@@ -1086,6 +1105,10 @@ section {
   }
 
   .header {
+
+    .navbar-top{
+      display: none;
+    }
 
     .search-form {
       position: absolute;
