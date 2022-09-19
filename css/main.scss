@@ -389,11 +389,11 @@ section {
   }
 
   .credit {
+    background: $white;
     display: flex;
     align-items: center;
-    gap: 2rem;
-    background: $white;
     justify-content: space-between;
+    gap: 2rem;
 
     p {
       font-size: 2rem;

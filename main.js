@@ -33,9 +33,13 @@ document.querySelector('.search-btn').onclick = () =>{
     searchForm.classList.toggle('active');
 }
 
+
+// 🍀🎨onscroll : excute code when scroll
 window.onscroll = () =>{
     sideBar.classList.remove('active');
-    searchForm.classList.remove('active');
+    // searchForm.classList.remove('active');
+
+    console.log('onscroll')
 };
 
 
