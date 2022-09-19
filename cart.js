@@ -173,23 +173,6 @@ function removeItemFromCart(p_id) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //🍀localStorage.clear(); /  location.reload();    
 // 🥨 products.js에 같은 코드 있음
 
